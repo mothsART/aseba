@@ -1,0 +1,1622 @@
+ dpkg-buildpackage -rfakeroot -us -uc -ui -i -b
+dpkg-buildpackage: info: paquet source aseba
+dpkg-buildpackage: info: version source 1.6.9
+dpkg-buildpackage: info: distribution source sid
+dpkg-buildpackage: info: source changé par Cyrille Biot <cyrille@cbiot.fr>
+ dpkg-source -i --before-build .
+dpkg-buildpackage: info: architecture hôte amd64
+ fakeroot debian/rules clean
+rm -rf debian/files debian/substvars debian/tmp debian/build
+ debian/rules build
+make: « build » est à jour.
+ fakeroot debian/rules binary
+mkdir -p debian/build
+cd debian/build && cmake -D USER_BUILD_VERSION=1.6.9 -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=../tmp/usr ../.. -DBUILD_SHARED_LIBS=OFF
+-- The C compiler identification is GNU 8.2.0
+-- The CXX compiler identification is GNU 8.2.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Git executable found
+-- libudev found
+Using dashel from /home/ragnarok/compilation/git/aseba/dashel
+CMake Warning (dev) at /usr/share/cmake-3.12/Modules/FindOpenGL.cmake:270 (message):
+  Policy CMP0072 is not set: FindOpenGL prefers GLVND by default when
+  available.  Run "cmake --help-policy CMP0072" for policy details.  Use the
+  cmake_policy command to set the policy and suppress this warning.
+
+  FindOpenGL found both a legacy GL library:
+
+    OPENGL_gl_LIBRARY: /usr/lib/x86_64-linux-gnu/libGL.so
+
+  and GLVND libraries for OpenGL and GLX:
+
+    OPENGL_opengl_LIBRARY: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+    OPENGL_glx_LIBRARY: /usr/lib/x86_64-linux-gnu/libGLX.so
+
+  OpenGL_GL_PREFERENCE has not been set to "GLVND" or "LEGACY", so for
+  compatibility with CMake 3.10 and below the legacy GL library will be used.
+Call Stack (most recent call first):
+  enki/CMakeLists.txt:11 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so   
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found SDL2: /usr/lib/x86_64-linux-gnu/libSDL2main.a;/usr/lib/x86_64-linux-gnu/libSDL2.so;-lpthread  
+-- Found PythonInterp: /usr/bin/python (found version "2.7.15") 
+-- Python version from interpreter is 2.7.15
+-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython2.7.so (found version "2.7.15+") 
+-- Python libs and executable found, looking for boost::python
+-- Boost version: 1.62.0
+-- Found the following Boost libraries:
+--   python
+-- boost::python found, generating python bindings
+-- SDL2 found, enabling joystick support
+-- Found Doxygen: /usr/bin/doxygen (found version "1.8.13") found components:  doxygen missing components:  dot
+Using Enki from /home/ragnarok/compilation/git/aseba/enki
+-- Found PythonInterp: /usr/bin/python (found suitable version "2.7.15", minimum required is "2.0") 
+-- Found Qwt: /usr/lib/libqwt-qt5.so (found version "6.1.3") 
+-- Found DNSSD: /usr/lib/x86_64-linux-gnu/libdns_sd.so  
+-- Found ZeroConf in /usr/include;/usr/lib/x86_64-linux-gnu/libdns_sd.so
+-- Enabling Dashel socketcan plugin
+-- Could NOT find Protobuf (missing: Protobuf_INCLUDE_DIR) 
+-- Google Protobuf library and compiler *not* found, usage logging disabled.
+-- Qwt found, enabling plotting in Studio
+-- qcollectiongenerator executable found
+-- Found LibXml2: /usr/lib/x86_64-linux-gnu/libxml2.so (found version "2.9.4") 
+CMake Warning (dev) at /usr/share/cmake-3.12/Modules/FindOpenGL.cmake:270 (message):
+  Policy CMP0072 is not set: FindOpenGL prefers GLVND by default when
+  available.  Run "cmake --help-policy CMP0072" for policy details.  Use the
+  cmake_policy command to set the policy and suppress this warning.
+
+  FindOpenGL found both a legacy GL library:
+
+    OPENGL_gl_LIBRARY: /usr/lib/x86_64-linux-gnu/libGL.so
+
+  and GLVND libraries for OpenGL and GLX:
+
+    OPENGL_opengl_LIBRARY: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+    OPENGL_glx_LIBRARY: /usr/lib/x86_64-linux-gnu/libGLX.so
+
+  OpenGL_GL_PREFERENCE has not been set to "GLVND" or "LEGACY", so for
+  compatibility with CMake 3.10 and below the legacy GL library will be used.
+Call Stack (most recent call first):
+  aseba/targets/playground/CMakeLists.txt:26 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Looking for include file getopt.h
+-- Looking for include file getopt.h - found
+-- Found PythonInterp: /usr/bin/python (found version "2.7.15") 
+-- zzuf executable found: /usr/bin/zzuf
+-- The following packages have been found:
+
+ * PythonLibs
+ * Boost
+ * Doxygen
+ * Qt5Core
+ * Qt5Gui
+ * Qt5Widgets
+ * Qt5OpenGL
+ * Qt5Network
+ * Qt5Sql (required version >= 5.11.2)
+ * Qt5Help
+ * Qt5Concurrent
+ * Qt5Xml
+ * Qt5Svg
+ * Qt5Test
+ * Qt5LinguistTools
+ * Qt5
+ * Qwt
+ * Qt5X11Extras
+ * Qt5DBus
+ * DNSSD
+ * Threads
+ * SDL2
+ * OpenGL
+ * LibXml2
+ * PythonInterp
+
+-- The following packages have not been found:
+
+ * Protobuf
+
+-- The following features have been enabled:
+
+ * DISCOVERY, Use AVAHI/DNSSD to discover compatible devices and their status
+ * ABOUT_QT, About Windows
+ * QT_ZEROCONF, Qt Zeroconf library ( depend on QtNetwork )
+ * MASSLOADER, Massloader ( depends on Qt xml )
+ * EVENT_LOGGER, Event Logger (depends on QWT) 
+ * STUDIO_ZEROCONF_SUPPORT, Zeroconf in Aseba Studio and VPL
+ * THYMIO_CONFIG, upgrader (depends on QtConcurrent )
+ * STUDIO, Studio
+ * JOY, Aseba Joy ( depends on SDL )
+
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    USER_BUILD_VERSION
+
+
+-- Build files have been written to: /home/ragnarok/compilation/git/aseba/debian/build
+cd debian/build && /usr/bin/make
+make[1] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[2] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target libavahi
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  0%] Building C object CMakeFiles/libavahi.dir/third_party/avahi-compat-libdns_sd/compat.c.o
+/home/ragnarok/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c: In function ‘service_browser_callback’:
+/home/ragnarok/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:653:27: warning: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+                 free(entry->name);
+                      ~~~~~^~~~~~
+In file included from /home/ragnarok/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:27:
+/usr/include/stdlib.h:563:25: note: expected ‘void *’ but argument is of type ‘const char *’
+ extern void free (void *__ptr) __THROW;
+                   ~~~~~~^~~~~
+/home/ragnarok/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:654:27: warning: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+                 free(entry->type);
+                      ~~~~~^~~~~~
+In file included from /home/ragnarok/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:27:
+/usr/include/stdlib.h:563:25: note: expected ‘void *’ but argument is of type ‘const char *’
+ extern void free (void *__ptr) __THROW;
+                   ~~~~~~^~~~~
+/home/ragnarok/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:655:27: warning: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+                 free(entry->domain);
+                      ~~~~~^~~~~~~~
+In file included from /home/ragnarok/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:27:
+/usr/include/stdlib.h:563:25: note: expected ‘void *’ but argument is of type ‘const char *’
+ extern void free (void *__ptr) __THROW;
+                   ~~~~~~^~~~~
+/home/ragnarok/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c: In function ‘domain_browser_callback’:
+/home/ragnarok/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:966:27: warning: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+                 free(entry->domain);
+                      ~~~~~^~~~~~~~
+In file included from /home/ragnarok/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:27:
+/usr/include/stdlib.h:563:25: note: expected ‘void *’ but argument is of type ‘const char *’
+ extern void free (void *__ptr) __THROW;
+                   ~~~~~~^~~~~
+/home/ragnarok/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c: In function ‘query_resolver_callback’:
+/home/ragnarok/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:1485:23: warning: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+             free(entry->name);
+                  ~~~~~^~~~~~
+In file included from /home/ragnarok/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:27:
+/usr/include/stdlib.h:563:25: note: expected ‘void *’ but argument is of type ‘const char *’
+ extern void free (void *__ptr) __THROW;
+                   ~~~~~~^~~~~
+[  1%] Linking C static library liblibavahi.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  1%] Built target libavahi
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target dashel
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  1%] Building CXX object dashel/CMakeFiles/dashel.dir/dashel/dashel-posix.cpp.o
+[  1%] Building CXX object dashel/CMakeFiles/dashel.dir/dashel/dashel-common.cpp.o
+[  2%] Linking CXX static library libdashel.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  2%] Built target dashel
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target chat
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  2%] Building CXX object dashel/examples/CMakeFiles/chat.dir/chat.cpp.o
+[  2%] Linking CXX executable chat
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  2%] Built target chat
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target microterm
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  2%] Building CXX object dashel/examples/CMakeFiles/microterm.dir/microterm.cpp.o
+[  2%] Linking CXX executable microterm
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  2%] Built target microterm
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target portlist
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  2%] Building CXX object dashel/examples/CMakeFiles/portlist.dir/portlist.cpp.o
+[  2%] Linking CXX executable portlist
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  2%] Built target portlist
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target udp
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  2%] Building CXX object dashel/examples/CMakeFiles/udp.dir/udp.cpp.o
+[  3%] Linking CXX executable udp
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  3%] Built target udp
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target dws
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  3%] Building CXX object dashel/examples/CMakeFiles/dws.dir/dws.cpp.o
+[  3%] Linking CXX executable dws
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  3%] Built target dws
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target reconnect
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  3%] Building CXX object dashel/examples/CMakeFiles/reconnect.dir/reconnect.cpp.o
+[  3%] Linking CXX executable reconnect
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  3%] Built target reconnect
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target enki
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  3%] Building CXX object enki/enki/CMakeFiles/enki.dir/Geometry.cpp.o
+[  4%] Building CXX object enki/enki/CMakeFiles/enki.dir/Types.cpp.o
+[  4%] Building CXX object enki/enki/CMakeFiles/enki.dir/PhysicalEngine.cpp.o
+[  4%] Building CXX object enki/enki/CMakeFiles/enki.dir/BluetoothBase.cpp.o
+[  4%] Building CXX object enki/enki/CMakeFiles/enki.dir/interactions/IRSensor.cpp.o
+[  5%] Building CXX object enki/enki/CMakeFiles/enki.dir/interactions/GroundSensor.cpp.o
+[  5%] Building CXX object enki/enki/CMakeFiles/enki.dir/interactions/CircularCam.cpp.o
+[  5%] Building CXX object enki/enki/CMakeFiles/enki.dir/interactions/Bluetooth.cpp.o
+[  5%] Building CXX object enki/enki/CMakeFiles/enki.dir/interactions/ActiveSoundSource.cpp.o
+[  5%] Building CXX object enki/enki/CMakeFiles/enki.dir/interactions/Microphone.cpp.o
+[  6%] Building CXX object enki/enki/CMakeFiles/enki.dir/robots/DifferentialWheeled.cpp.o
+[  6%] Building CXX object enki/enki/CMakeFiles/enki.dir/robots/khepera/Khepera.cpp.o
+[  6%] Building CXX object enki/enki/CMakeFiles/enki.dir/robots/e-puck/EPuck.cpp.o
+[  6%] Building CXX object enki/enki/CMakeFiles/enki.dir/robots/s-bot/Sbot.cpp.o
+[  6%] Building CXX object enki/enki/CMakeFiles/enki.dir/robots/s-bot/SbotObject.cpp.o
+[  7%] Building CXX object enki/enki/CMakeFiles/enki.dir/robots/marxbot/Marxbot.cpp.o
+[  7%] Building CXX object enki/enki/CMakeFiles/enki.dir/robots/thymio2/Thymio2.cpp.o
+[  7%] Linking CXX static library libenki.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  7%] Built target enki
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target enkiviewer_autogen
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  7%] Automatic MOC for target enkiviewer
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  7%] Built target enkiviewer_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  8%] Automatic RCC for enki-viewer-textures.qrc
+Scanning dependencies of target enkiviewer
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  8%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/Viewer.cpp.o
+[  8%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/EPuckModel.cpp.o
+[  8%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/EPuckBody.cpp.o
+[  8%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/EPuckRest.cpp.o
+[  9%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/EPuckRing.cpp.o
+[  9%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/EPuckWheelLeft.cpp.o
+[  9%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/EPuckWheelRight.cpp.o
+[  9%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/MarxbotModel.cpp.o
+[ 10%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/MarxbotBase.cpp.o
+[ 10%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/MarxbotWheel.cpp.o
+[ 10%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/Thymio2Model.cpp.o
+[ 10%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/Thymio2Body.cpp.o
+[ 10%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/Thymio2Wheel.cpp.o
+[ 11%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/enkiviewer_autogen/mocs_compilation.cpp.o
+[ 11%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/enkiviewer_autogen/EWIEGA46WW/qrc_enki-viewer-textures.cpp.o
+[ 11%] Linking CXX static library libenkiviewer.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 11%] Built target enkiviewer
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target pyenki
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 12%] Building CXX object enki/python/CMakeFiles/pyenki.dir/enki.cpp.o
+[ 12%] Linking CXX shared module pyenki.so
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 12%] Built target pyenki
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target testGeometry
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 13%] Building CXX object enki/tests/CMakeFiles/testGeometry.dir/testGeometry.cpp.o
+[ 13%] Linking CXX executable testGeometry
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 13%] Built target testGeometry
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target enkiMinimal
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 13%] Building CXX object enki/examples/minimal/CMakeFiles/enkiMinimal.dir/enkiMinimal.cpp.o
+[ 14%] Linking CXX executable enkiMinimal
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 14%] Built target enkiMinimal
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target enkiplayground_autogen
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 14%] Automatic MOC for target enkiplayground
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 14%] Built target enkiplayground_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target enkiplayground
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 14%] Building CXX object enki/examples/playground/CMakeFiles/enkiplayground.dir/Playground.cpp.o
+[ 14%] Building CXX object enki/examples/playground/CMakeFiles/enkiplayground.dir/enkiplayground_autogen/mocs_compilation.cpp.o
+[ 14%] Linking CXX executable enkiplayground
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 14%] Built target enkiplayground
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebacommon
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 15%] Building CXX object aseba/common/CMakeFiles/asebacommon.dir/utils/FormatableString.cpp.o
+[ 15%] Building CXX object aseba/common/CMakeFiles/asebacommon.dir/utils/utils.cpp.o
+[ 15%] Building CXX object aseba/common/CMakeFiles/asebacommon.dir/utils/HexFile.cpp.o
+[ 15%] Building CXX object aseba/common/CMakeFiles/asebacommon.dir/utils/BootloaderInterface.cpp.o
+[ 15%] Building CXX object aseba/common/CMakeFiles/asebacommon.dir/msg/msg.cpp.o
+[ 16%] Building CXX object aseba/common/CMakeFiles/asebacommon.dir/msg/NodesManager.cpp.o
+[ 16%] Building CXX object aseba/common/CMakeFiles/asebacommon.dir/msg/TargetDescription.cpp.o
+[ 16%] Building CXX object aseba/common/CMakeFiles/asebacommon.dir/version.cpp.o
+[ 16%] Linking CXX static library libasebacommon.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 16%] Built target asebacommon
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 16%] Generating moc_AboutDialog.cpp
+[ 17%] Generating qrc_asebaqtabout.cpp
+Scanning dependencies of target asebaqtabout
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 17%] Building CXX object aseba/common/about/CMakeFiles/asebaqtabout.dir/AboutDialog.cpp.o
+[ 17%] Building CXX object aseba/common/about/CMakeFiles/asebaqtabout.dir/moc_AboutDialog.cpp.o
+[ 17%] Building CXX object aseba/common/about/CMakeFiles/asebaqtabout.dir/qrc_asebaqtabout.cpp.o
+[ 18%] Linking CXX static library libasebaqtabout.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 20%] Built target asebaqtabout
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebadashelplugins
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 20%] Building CXX object aseba/transport/dashel_plugins/CMakeFiles/asebadashelplugins.dir/socketcan.cpp.o
+[ 20%] Linking CXX static library libasebadashelplugins.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 20%] Built target asebadashelplugins
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebazeroconf
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 21%] Building CXX object aseba/common/zeroconf/CMakeFiles/asebazeroconf.dir/zeroconf.cpp.o
+[ 21%] Building CXX object aseba/common/zeroconf/CMakeFiles/asebazeroconf.dir/txtrecord.cpp.o
+[ 21%] Building CXX object aseba/common/zeroconf/CMakeFiles/asebazeroconf.dir/target.cpp.o
+[ 21%] Building CXX object aseba/common/zeroconf/CMakeFiles/asebazeroconf.dir/zeroconf-thread.cpp.o
+[ 21%] Building CXX object aseba/common/zeroconf/CMakeFiles/asebazeroconf.dir/zeroconf-dashelhub.cpp.o
+[ 22%] Linking CXX static library libasebazeroconf.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 22%] Built target asebazeroconf
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebazeroconfqt_autogen
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 23%] Automatic MOC for target asebazeroconfqt
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 23%] Built target asebazeroconfqt_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebazeroconfqt
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 23%] Building CXX object aseba/common/zeroconf/CMakeFiles/asebazeroconfqt.dir/zeroconf-qt.cpp.o
+[ 23%] Building CXX object aseba/common/zeroconf/CMakeFiles/asebazeroconfqt.dir/asebazeroconfqt_autogen/mocs_compilation.cpp.o
+[ 23%] Linking CXX static library libasebazeroconfqt.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 23%] Built target asebazeroconfqt
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebavm
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 23%] Building C object aseba/vm/CMakeFiles/asebavm.dir/vm.c.o
+[ 23%] Building C object aseba/vm/CMakeFiles/asebavm.dir/natives.c.o
+[ 24%] Linking C static library libasebavm.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 24%] Built target asebavm
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebavmbuffer
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 24%] Building C object aseba/transport/buffer/CMakeFiles/asebavmbuffer.dir/vm-buffer.c.o
+[ 24%] Linking C static library libasebavmbuffer.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 24%] Built target asebavmbuffer
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebacompiler
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 24%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/compiler.cpp.o
+[ 25%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/errors.cpp.o
+[ 25%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/identifier-lookup.cpp.o
+[ 25%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/lexer.cpp.o
+[ 25%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/parser.cpp.o
+[ 26%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/analysis.cpp.o
+[ 26%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/tree-build.cpp.o
+[ 26%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/tree-expand.cpp.o
+[ 26%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/tree-dump.cpp.o
+[ 26%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/tree-typecheck.cpp.o
+[ 27%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/tree-optimize.cpp.o
+[ 27%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/tree-emit.cpp.o
+[ 27%] Linking CXX static library libasebacompiler.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 27%] Built target asebacompiler
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebacmd
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 27%] Building CXX object aseba/clients/cmd/CMakeFiles/asebacmd.dir/cmd.cpp.o
+[ 27%] Linking CXX executable ../../../bin/asebacmd
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 27%] Built target asebacmd
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebadump
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 27%] Building CXX object aseba/clients/dump/CMakeFiles/asebadump.dir/dump.cpp.o
+[ 28%] Linking CXX executable ../../../bin/asebadump
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 28%] Built target asebadump
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebarec
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Building CXX object aseba/clients/replay/CMakeFiles/asebarec.dir/rec.cpp.o
+[ 29%] Linking CXX executable ../../../bin/asebarec
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Built target asebarec
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebaplay
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Building CXX object aseba/clients/replay/CMakeFiles/asebaplay.dir/play.cpp.o
+[ 29%] Linking CXX executable ../../../bin/asebaplay
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Built target asebaplay
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebaexec
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Building CXX object aseba/clients/exec/CMakeFiles/asebaexec.dir/exec.cpp.o
+[ 29%] Linking CXX executable ../../../bin/asebaexec
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Built target asebaexec
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebamassloader
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Building CXX object aseba/clients/massloader/CMakeFiles/asebamassloader.dir/massloader.cpp.o
+[ 29%] Linking CXX executable ../../../bin/asebamassloader
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Built target asebamassloader
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebaeventlogger
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Building CXX object aseba/clients/eventlogger/CMakeFiles/asebaeventlogger.dir/eventlogger.cpp.o
+[ 29%] Linking CXX executable ../../../bin/asebaeventlogger
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Built target asebaeventlogger
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Generating moc_ThymioUpgrader.cpp
+[ 29%] Generating qrc_thymioupgrader.cpp
+Scanning dependencies of target thymioupgrader
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 30%] Building CXX object aseba/clients/thymioupgrader/CMakeFiles/thymioupgrader.dir/ThymioUpgrader.cpp.o
+[ 30%] Building CXX object aseba/clients/thymioupgrader/CMakeFiles/thymioupgrader.dir/moc_ThymioUpgrader.cpp.o
+[ 30%] Building CXX object aseba/clients/thymioupgrader/CMakeFiles/thymioupgrader.dir/qrc_thymioupgrader.cpp.o
+[ 30%] Linking CXX executable ../../../bin/thymioupgrader
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 32%] Built target thymioupgrader
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target thymiownetconfig-cli
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 32%] Building C object aseba/clients/thymiownetconfig/CMakeFiles/thymiownetconfig-cli.dir/thymiownetconfig-cli.c.o
+[ 33%] Linking CXX executable ../../../bin/thymiownetconfig-cli
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 33%] Built target thymiownetconfig-cli
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 33%] Generating moc_ThymioWNetConfig.cpp
+[ 33%] Generating qrc_thymiownetconfig.cpp
+Scanning dependencies of target thymiownetconfig
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 34%] Building CXX object aseba/clients/thymiownetconfig/CMakeFiles/thymiownetconfig.dir/ThymioWNetConfig.cpp.o
+[ 34%] Building CXX object aseba/clients/thymiownetconfig/CMakeFiles/thymiownetconfig.dir/moc_ThymioWNetConfig.cpp.o
+[ 34%] Building CXX object aseba/clients/thymiownetconfig/CMakeFiles/thymiownetconfig.dir/qrc_thymiownetconfig.cpp.o
+[ 34%] Linking CXX executable ../../../bin/thymiownetconfig
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 36%] Built target thymiownetconfig
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 36%] Generating ThymioVPL/moc_LogSignalMapper.cpp
+[ 36%] Generating moc_VariablesViewPlugin.cpp
+[ 36%] Generating moc_StopThymioPlugin.cpp
+[ 36%] Generating ThymioVPL/moc_ThymioVisualProgramming.cpp
+[ 36%] Generating ThymioVPL/moc_ResizingView.cpp
+[ 37%] Generating ThymioVPL/moc_Buttons.cpp
+[ 37%] Generating ThymioVPL/moc_Block.cpp
+[ 37%] Generating ThymioVPL/moc_EventBlocks.cpp
+[ 37%] Generating ThymioVPL/moc_ActionBlocks.cpp
+[ 37%] Generating ThymioVPL/moc_EventActionsSet.cpp
+[ 38%] Generating ThymioVPL/moc_Scene.cpp
+[ 38%] Generating ThymioVPL/moc_UsageLogger.cpp
+/home/ragnarok/compilation/git/aseba/aseba/clients/studio/plugins/ThymioVPL/UsageLogger.h:0: Note: No relevant classes found. No output generated.
+Scanning dependencies of target asebaqtplugins
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 38%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/VariablesViewPlugin.cpp.o
+[ 39%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/StopThymioPlugin.cpp.o
+[ 39%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/ThymioVisualProgramming.cpp.o
+[ 39%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/ResizingView.cpp.o
+[ 39%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/Buttons.cpp.o
+[ 39%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/Block.cpp.o
+[ 40%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/EventBlocks.cpp.o
+[ 40%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/StateBlocks.cpp.o
+[ 40%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/ActionBlocks.cpp.o
+[ 40%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/EventActionsSet.cpp.o
+[ 40%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/Scene.cpp.o
+[ 41%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/Compiler.cpp.o
+[ 41%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/CompilerVisitors.cpp.o
+[ 41%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/Style.cpp.o
+[ 41%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/Utils.cpp.o
+[ 42%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/LogSignalMapper.cpp.o
+[ 42%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/moc_VariablesViewPlugin.cpp.o
+[ 42%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/moc_StopThymioPlugin.cpp.o
+[ 42%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_ThymioVisualProgramming.cpp.o
+[ 42%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_ResizingView.cpp.o
+[ 43%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_Buttons.cpp.o
+[ 43%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_Block.cpp.o
+[ 43%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_EventBlocks.cpp.o
+[ 43%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_ActionBlocks.cpp.o
+[ 43%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_EventActionsSet.cpp.o
+[ 44%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_Scene.cpp.o
+[ 44%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_UsageLogger.cpp.o
+[ 44%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_LogSignalMapper.cpp.o
+[ 44%] Linking CXX static library libasebaqtplugins.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 44%] Built target asebaqtplugins
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 44%] Generating translations/moc_CompilerTranslator.cpp
+[ 44%] Generating moc_Target.cpp
+[ 44%] Generating moc_DashelTarget.cpp
+[ 44%] Generating moc_TargetModels.cpp
+[ 45%] Generating moc_AeslEditor.cpp
+Scanning dependencies of target asebaqtcommon
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 45%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/Target.cpp.o
+[ 45%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/DashelTarget.cpp.o
+[ 45%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/TargetModels.cpp.o
+[ 46%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/CustomWidgets.cpp.o
+[ 46%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/AeslEditor.cpp.o
+[ 46%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/Plugin.cpp.o
+[ 46%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/translations/CompilerTranslator.cpp.o
+[ 46%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/moc_Target.cpp.o
+[ 47%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/moc_DashelTarget.cpp.o
+[ 47%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/moc_TargetModels.cpp.o
+[ 47%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/moc_AeslEditor.cpp.o
+[ 47%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/translations/moc_CompilerTranslator.cpp.o
+[ 48%] Linking CXX static library libasebaqtcommon.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 48%] Built target asebaqtcommon
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 49%] Generating aseba-doc.qch
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+QStandardPaths: wrong ownership on runtime directory /tmp/runtime-root, 1000 instead of 0
+Construction de la structure de fichiers en cours...
+Insertion de filtres personnalisés...
+Insertion de données d'aide pour la section filtre (1 sur 5)...
+Insertion des fichiers...
+Insertion du contenu...
+Insertion des index...
+Insertion de données d'aide pour la section filtre (2 sur 5)...
+Insertion des fichiers...
+Insertion du contenu...
+Insertion des index...
+Insertion de données d'aide pour la section filtre (3 sur 5)...
+Insertion des fichiers...
+Insertion du contenu...
+Insertion des index...
+Insertion de données d'aide pour la section filtre (4 sur 5)...
+Insertion des fichiers...
+Insertion du contenu...
+Insertion des index...
+Insertion de données d'aide pour la section filtre (5 sur 5)...
+Insertion des fichiers...
+Insertion du contenu...
+Insertion des index...
+Documentation générée avec succès.
+[ 50%] Generating moc_StudioAeslEditor.cpp
+[ 50%] Generating moc_MainWindow.cpp
+[ 50%] Generating moc_NamedValuesVectorModel.cpp
+[ 50%] Generating moc_ClickableLabel.cpp
+[ 50%] Generating moc_CustomDelegate.cpp
+[ 51%] Generating moc_FindDialog.cpp
+[ 51%] Generating moc_EventViewer.cpp
+[ 51%] Generating moc_HelpViewer.cpp
+[ 51%] Generating moc_ConfigDialog.cpp
+[ 51%] Generating moc_ModelAggregator.cpp
+[ 52%] Generating qrc_asebastudio.cpp
+[ 52%] Generating aseba-doc.qhc
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+QStandardPaths: wrong ownership on runtime directory /tmp/runtime-root, 1000 instead of 0
+Reading collection config file...
+Creating collection file...
+[ 52%] Generating qrc_asebastudiohelp.cpp
+Scanning dependencies of target asebastudio
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 52%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/StudioAeslEditor.cpp.o
+[ 52%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/PluginRegistry.cpp.o
+[ 52%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/MainWindow.cpp.o
+[ 52%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/NamedValuesVectorModel.cpp.o
+[ 53%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/ClickableLabel.cpp.o
+[ 53%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/CustomDelegate.cpp.o
+[ 53%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/main.cpp.o
+[ 53%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/FindDialog.cpp.o
+[ 53%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/EventViewer.cpp.o
+[ 54%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/HelpViewer.cpp.o
+[ 54%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/ConfigDialog.cpp.o
+[ 54%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/ModelAggregator.cpp.o
+[ 54%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_StudioAeslEditor.cpp.o
+[ 55%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_MainWindow.cpp.o
+[ 55%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_NamedValuesVectorModel.cpp.o
+[ 55%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_ClickableLabel.cpp.o
+[ 55%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_CustomDelegate.cpp.o
+[ 55%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_FindDialog.cpp.o
+[ 56%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_EventViewer.cpp.o
+[ 56%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_HelpViewer.cpp.o
+[ 56%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_ConfigDialog.cpp.o
+[ 56%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_ModelAggregator.cpp.o
+[ 56%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/qrc_asebastudio.cpp.o
+[ 57%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/qrc_asebastudiohelp.cpp.o
+[ 57%] Linking CXX executable ../../../bin/asebastudio
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 61%] Built target asebastudio
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 61%] Generating moc_ThymioVPLStandalone.cpp
+Scanning dependencies of target thymiovpl
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 61%] Building CXX object aseba/clients/studio/CMakeFiles/thymiovpl.dir/qrc_asebastudio.cpp.o
+[ 61%] Building CXX object aseba/clients/studio/CMakeFiles/thymiovpl.dir/qrc_asebastudiohelp.cpp.o
+[ 61%] Building CXX object aseba/clients/studio/CMakeFiles/thymiovpl.dir/ThymioVPLStandalone.cpp.o
+[ 61%] Building CXX object aseba/clients/studio/CMakeFiles/thymiovpl.dir/moc_ThymioVPLStandalone.cpp.o
+[ 62%] Building CXX object aseba/clients/studio/CMakeFiles/thymiovpl.dir/thymiovpl.cpp.o
+[ 62%] Linking CXX executable ../../../bin/thymiovpl
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 68%] Built target thymiovpl
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target rendervplblocks
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 69%] Building CXX object aseba/clients/studio/CMakeFiles/rendervplblocks.dir/rendervplblocks.cpp.o
+[ 69%] Building CXX object aseba/clients/studio/CMakeFiles/rendervplblocks.dir/qrc_asebastudio.cpp.o
+[ 69%] Building CXX object aseba/clients/studio/CMakeFiles/rendervplblocks.dir/qrc_asebastudiohelp.cpp.o
+[ 69%] Linking CXX executable ../../../bin/rendervplblocks
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 74%] Built target rendervplblocks
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebajoy
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 74%] Building CXX object aseba/clients/joy/CMakeFiles/asebajoy.dir/asebajoy.cpp.o
+[ 75%] Linking CXX executable ../../../bin/asebajoy
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 75%] Built target asebajoy
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebaswitch
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 75%] Building CXX object aseba/switches/switch/CMakeFiles/asebaswitch.dir/switch.cpp.o
+[ 75%] Linking CXX executable ../../../bin/asebaswitch
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 75%] Built target asebaswitch
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebamedulla_autogen
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 75%] Automatic MOC for target asebamedulla
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 75%] Built target asebamedulla_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebamedulla
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 75%] Building CXX object aseba/switches/medulla/CMakeFiles/asebamedulla.dir/medulla.cpp.o
+[ 75%] Building CXX object aseba/switches/medulla/CMakeFiles/asebamedulla.dir/asebamedulla_autogen/mocs_compilation.cpp.o
+[ 76%] Linking CXX executable ../../../bin/asebamedulla
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 76%] Built target asebamedulla
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebahttp
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 77%] Building CXX object aseba/switches/http/CMakeFiles/asebahttp.dir/http.cpp.o
+[ 77%] Building CXX object aseba/switches/http/CMakeFiles/asebahttp.dir/main.cpp.o
+[ 77%] Linking CXX executable ../../../bin/asebahttp
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 77%] Built target asebahttp
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebahttphub
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 78%] Building CXX object aseba/switches/http/CMakeFiles/asebahttphub.dir/http.cpp.o
+[ 78%] Building CXX object aseba/switches/http/CMakeFiles/asebahttphub.dir/main.cpp.o
+[ 78%] Linking CXX static library libasebahttphub.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 78%] Built target asebahttphub
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebahttp2hub
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 78%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2hub.dir/AeslProgram.cpp.o
+[ 78%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2hub.dir/HttpDashelTarget.cpp.o
+[ 78%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2hub.dir/HttpInterface.cpp.o
+[ 79%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2hub.dir/HttpInterfaceHandlers.cpp.o
+[ 79%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2hub.dir/HttpRequest.cpp.o
+[ 79%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2hub.dir/HttpResponse.cpp.o
+[ 79%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2hub.dir/main.cpp.o
+/home/ragnarok/compilation/git/aseba/aseba/switches/http2/main.cpp: In function ‘int main(int, char**)’:
+/home/ragnarok/compilation/git/aseba/aseba/switches/http2/main.cpp:85:8: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   std::auto_ptr<Aseba::Http::HttpInterface> interface(new Aseba::Http::HttpInterface(httpPort));
+        ^~~~~~~~
+In file included from /usr/include/c++/8/memory:80,
+                 from /home/ragnarok/compilation/git/aseba/aseba/switches/http2/main.cpp:23:
+/usr/include/c++/8/bits/unique_ptr.h:53:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+[ 79%] Linking CXX static library libasebahttp2hub.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 79%] Built target asebahttp2hub
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebahttp2
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 79%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2.dir/AeslProgram.cpp.o
+[ 79%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2.dir/HttpDashelTarget.cpp.o
+[ 80%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2.dir/HttpInterface.cpp.o
+[ 80%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2.dir/HttpInterfaceHandlers.cpp.o
+[ 80%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2.dir/HttpRequest.cpp.o
+[ 80%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2.dir/HttpResponse.cpp.o
+[ 81%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2.dir/main.cpp.o
+/home/ragnarok/compilation/git/aseba/aseba/switches/http2/main.cpp: In function ‘int main(int, char**)’:
+/home/ragnarok/compilation/git/aseba/aseba/switches/http2/main.cpp:85:8: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   std::auto_ptr<Aseba::Http::HttpInterface> interface(new Aseba::Http::HttpInterface(httpPort));
+        ^~~~~~~~
+In file included from /usr/include/c++/8/memory:80,
+                 from /home/ragnarok/compilation/git/aseba/aseba/switches/http2/main.cpp:23:
+/usr/include/c++/8/bits/unique_ptr.h:53:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+[ 81%] Linking CXX executable ../../../bin/asebahttp2
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 81%] Built target asebahttp2
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebadummynode
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 82%] Building CXX object aseba/targets/dummy/CMakeFiles/asebadummynode.dir/dummynode.cpp.o
+[ 82%] Building C object aseba/targets/dummy/CMakeFiles/asebadummynode.dir/dummynode_description.c.o
+[ 82%] Linking CXX executable ../../../bin/asebadummynode
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 82%] Built target asebadummynode
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebachallenge_autogen
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 82%] Automatic MOC for target asebachallenge
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 82%] Built target asebachallenge_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 82%] Generating qrc_challenge-textures.cpp
+Scanning dependencies of target asebachallenge
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 83%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/challenge.cpp.o
+[ 83%] Building C object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/challenge-vm-description.c.o
+[ 83%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/objects/food_base.cpp.o
+[ 83%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/objects/food_charge0.cpp.o
+[ 83%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/objects/food_charge1.cpp.o
+[ 84%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/objects/food_charge2.cpp.o
+[ 84%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/objects/food_charge3.cpp.o
+[ 84%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/objects/food_ring.cpp.o
+[ 84%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/qrc_challenge-textures.cpp.o
+[ 84%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/asebachallenge_autogen/mocs_compilation.cpp.o
+[ 85%] Linking CXX executable ../../../bin/asebachallenge
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 87%] Built target asebachallenge
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebasim
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 87%] Building CXX object aseba/targets/playground/CMakeFiles/asebasim.dir/EnkiGlue.cpp.o
+[ 88%] Building CXX object aseba/targets/playground/CMakeFiles/asebasim.dir/AsebaGlue.cpp.o
+[ 88%] Building CXX object aseba/targets/playground/CMakeFiles/asebasim.dir/DirectAsebaGlue.cpp.o
+[ 88%] Building CXX object aseba/targets/playground/CMakeFiles/asebasim.dir/Door.cpp.o
+[ 88%] Building CXX object aseba/targets/playground/CMakeFiles/asebasim.dir/robots/e-puck/EPuck.cpp.o
+[ 88%] Building C object aseba/targets/playground/CMakeFiles/asebasim.dir/robots/e-puck/EPuck-descriptions.c.o
+[ 89%] Building CXX object aseba/targets/playground/CMakeFiles/asebasim.dir/robots/thymio2/Thymio2.cpp.o
+[ 89%] Building CXX object aseba/targets/playground/CMakeFiles/asebasim.dir/robots/thymio2/Thymio2-natives.cpp.o
+[ 89%] Building C object aseba/targets/playground/CMakeFiles/asebasim.dir/robots/thymio2/Thymio2-descriptions.c.o
+[ 89%] Linking CXX static library libasebasim.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 89%] Built target asebasim
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebaplayground_autogen
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 89%] Automatic MOC for target asebaplayground
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 89%] Built target asebaplayground_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 89%] Generating qrc_asebaplayground.cpp
+Scanning dependencies of target asebaplayground
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 89%] Building CXX object aseba/targets/playground/CMakeFiles/asebaplayground.dir/DashelAsebaGlue.cpp.o
+[ 89%] Building CXX object aseba/targets/playground/CMakeFiles/asebaplayground.dir/PlaygroundViewer.cpp.o
+[ 89%] Building CXX object aseba/targets/playground/CMakeFiles/asebaplayground.dir/PlaygroundDBusAdaptors.cpp.o
+[ 89%] Building CXX object aseba/targets/playground/CMakeFiles/asebaplayground.dir/playground.cpp.o
+[ 90%] Building CXX object aseba/targets/playground/CMakeFiles/asebaplayground.dir/qrc_asebaplayground.cpp.o
+[ 90%] Building CXX object aseba/targets/playground/CMakeFiles/asebaplayground.dir/asebaplayground_autogen/mocs_compilation.cpp.o
+[ 90%] Linking CXX executable ../../../bin/asebaplayground
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 93%] Built target asebaplayground
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebashell
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 93%] Building CXX object examples/clients/cpp-shell/CMakeFiles/asebashell.dir/shell.cpp.o
+[ 93%] Linking CXX executable ../../../bin/asebashell
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 93%] Built target asebashell
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target aseba-qt-gui_autogen
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 93%] Automatic MOC for target aseba-qt-gui
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 93%] Built target aseba-qt-gui_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target aseba-qt-gui
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 93%] Building CXX object examples/clients/cpp-qt-gui/CMakeFiles/aseba-qt-gui.dir/main.cpp.o
+[ 93%] Building CXX object examples/clients/cpp-qt-gui/CMakeFiles/aseba-qt-gui.dir/dashelinterface.cpp.o
+[ 93%] Building CXX object examples/clients/cpp-qt-gui/CMakeFiles/aseba-qt-gui.dir/mainwindow.cpp.o
+[ 93%] Building CXX object examples/clients/cpp-qt-gui/CMakeFiles/aseba-qt-gui.dir/aseba-qt-gui_autogen/mocs_compilation.cpp.o
+[ 94%] Linking CXX executable ../../../bin/aseba-qt-gui
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 94%] Built target aseba-qt-gui
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target aseba-qt-dbus_autogen
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 95%] Automatic MOC for target aseba-qt-dbus
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 95%] Built target aseba-qt-dbus_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target aseba-qt-dbus
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 95%] Building CXX object examples/clients/cpp-qt-dbus/CMakeFiles/aseba-qt-dbus.dir/main.cpp.o
+[ 95%] Building CXX object examples/clients/cpp-qt-dbus/CMakeFiles/aseba-qt-dbus.dir/dbusinterface.cpp.o
+[ 95%] Building CXX object examples/clients/cpp-qt-dbus/CMakeFiles/aseba-qt-dbus.dir/aseba-qt-dbus_autogen/mocs_compilation.cpp.o
+[ 95%] Linking CXX executable ../../../bin/aseba-qt-dbus
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 95%] Built target aseba-qt-dbus
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebabotspeak
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 95%] Building CXX object examples/switches/botspeak/CMakeFiles/asebabotspeak.dir/botspeak.cpp.o
+[ 95%] Linking CXX executable ../../../bin/asebabotspeak
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 95%] Built target asebabotspeak
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebatargetlist-dashelhub
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 95%] Building CXX object examples/zeroconf/CMakeFiles/asebatargetlist-dashelhub.dir/targetlist-dashelhub.cpp.o
+[ 95%] Linking CXX executable ../../bin/asebatargetlist-dashelhub
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 95%] Built target asebatargetlist-dashelhub
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebatargetadvertise
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 96%] Building CXX object examples/zeroconf/CMakeFiles/asebatargetadvertise.dir/targetadvertise.cpp.o
+[ 96%] Linking CXX executable ../../bin/asebatargetadvertise
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 96%] Built target asebatargetadvertise
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebatargetlist-thread
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 96%] Building CXX object examples/zeroconf/CMakeFiles/asebatargetlist-thread.dir/targetlist-thread.cpp.o
+[ 96%] Linking CXX executable ../../bin/asebatargetlist-thread
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 96%] Built target asebatargetlist-thread
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebatargetlist-qt_autogen
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 96%] Automatic MOC for target asebatargetlist-qt
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 96%] Built target asebatargetlist-qt_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebatargetlist-qt
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 96%] Building CXX object examples/zeroconf/CMakeFiles/asebatargetlist-qt.dir/targetlist-qt.cpp.o
+[ 97%] Building CXX object examples/zeroconf/CMakeFiles/asebatargetlist-qt.dir/asebatargetlist-qt_autogen/mocs_compilation.cpp.o
+[ 97%] Linking CXX executable ../../bin/asebatargetlist-qt
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 97%] Built target asebatargetlist-qt
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target tst_compiler_utf8
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 97%] Building CXX object tests/common/CMakeFiles/tst_compiler_utf8.dir/utf8.cpp.o
+[ 97%] Linking CXX executable ../../bin/tst_compiler_utf8
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 97%] Built target tst_compiler_utf8
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target aseba-test-invalid-utf8
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 97%] Building CXX object tests/common/CMakeFiles/aseba-test-invalid-utf8.dir/aseba-test-invalid-utf8.cpp.o
+[ 97%] Linking CXX executable ../../bin/aseba-test-invalid-utf8
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 97%] Built target aseba-test-invalid-utf8
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target aseba-test-msg
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 97%] Building CXX object tests/msg/CMakeFiles/aseba-test-msg.dir/aseba-test-msg.cpp.o
+[ 98%] Linking CXX executable ../../bin/aseba-test-msg
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 98%] Built target aseba-test-msg
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebavmdummycallbacks
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 98%] Building CXX object tests/compiler/CMakeFiles/asebavmdummycallbacks.dir/asebavmdummycallbacks.cpp.o
+[ 98%] Linking CXX static library libasebavmdummycallbacks.a
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 98%] Built target asebavmdummycallbacks
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebatest
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 99%] Building CXX object tests/compiler/CMakeFiles/asebatest.dir/asebatest.cpp.o
+[ 99%] Linking CXX executable ../../bin/asebatest
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 99%] Built target asebatest
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target aseba-test-natives-count
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 99%] Building CXX object tests/vm/CMakeFiles/aseba-test-natives-count.dir/aseba-test-natives-count.cpp.o
+[ 99%] Linking CXX executable ../../bin/aseba-test-natives-count
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 99%] Built target aseba-test-natives-count
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Scanning dependencies of target aseba-test-simulator
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 99%] Building CXX object tests/simulator/CMakeFiles/aseba-test-simulator.dir/aseba-test-simulator.cpp.o
+[100%] Linking CXX executable ../../bin/aseba-test-simulator
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[100%] Built target aseba-test-simulator
+make[2] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[1] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+install -d debian/tmp/DEBIAN
+install -d debian/tmp/usr/bin
+install -d debian/tmp/usr/share/doc/aseba
+install -d debian/tmp/usr/share/doc/aseba/example-code
+install -d debian/tmp/usr/share/doc/aseba/example-scenarios
+cp changelog.md debian/tmp/usr/share/doc/aseba/changelog
+cp debian/changelog debian/tmp/usr/share/doc/aseba/changelog.debian
+cp debian/copyright debian/tmp/usr/share/doc/aseba
+cp aseba/targets/playground/examples/*.png debian/tmp/usr/share/doc/aseba/example-scenarios
+cp aseba/targets/playground/examples/*.playground debian/tmp/usr/share/doc/aseba/example-scenarios
+cp aseba/targets/playground/examples/thymio-default-behaviours.aesl debian/tmp/usr/share/doc/aseba/example-scenarios
+cp aseba/targets/playground/examples/*.aesl debian/tmp/usr/share/doc/aseba/example-code
+cp aseba/targets/challenge/examples/challenge-goto-energy.aesl debian/tmp/usr/share/doc/aseba/example-code
+strip --strip-unneeded -R .note -R .comment  debian/build/*/*.a
+strip --strip-unneeded -R .note -R .comment  debian/build/*/*/*.a
+cd debian/build && /usr/bin/make install
+make[1] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[2] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  1%] Built target libavahi
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  2%] Built target dashel
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  2%] Linking CXX executable chat
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  2%] Built target chat
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  2%] Linking CXX executable microterm
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  2%] Built target microterm
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  2%] Linking CXX executable portlist
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  2%] Built target portlist
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  3%] Linking CXX executable udp
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  3%] Built target udp
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  3%] Linking CXX executable dws
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  3%] Built target dws
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  3%] Linking CXX executable reconnect
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  3%] Built target reconnect
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  7%] Built target enki
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  7%] Automatic MOC for target enkiviewer
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[  7%] Built target enkiviewer_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 11%] Built target enkiviewer
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 11%] Linking CXX shared module pyenki.so
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 12%] Built target pyenki
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 12%] Linking CXX executable testGeometry
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 13%] Built target testGeometry
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 14%] Linking CXX executable enkiMinimal
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 14%] Built target enkiMinimal
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 14%] Automatic MOC for target enkiplayground
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 14%] Built target enkiplayground_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 14%] Linking CXX executable enkiplayground
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 14%] Built target enkiplayground
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 16%] Built target asebacommon
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 20%] Built target asebaqtabout
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 20%] Built target asebadashelplugins
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 22%] Built target asebazeroconf
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 23%] Automatic MOC for target asebazeroconfqt
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 23%] Built target asebazeroconfqt_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 23%] Built target asebazeroconfqt
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 24%] Built target asebavm
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 24%] Built target asebavmbuffer
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 27%] Built target asebacompiler
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 27%] Linking CXX executable ../../../bin/asebacmd
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 27%] Built target asebacmd
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 28%] Linking CXX executable ../../../bin/asebadump
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 28%] Built target asebadump
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 28%] Linking CXX executable ../../../bin/asebarec
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Built target asebarec
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Linking CXX executable ../../../bin/asebaplay
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Built target asebaplay
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Linking CXX executable ../../../bin/asebaexec
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Built target asebaexec
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Linking CXX executable ../../../bin/asebamassloader
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Built target asebamassloader
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Linking CXX executable ../../../bin/asebaeventlogger
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Built target asebaeventlogger
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 29%] Linking CXX executable ../../../bin/thymioupgrader
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 32%] Built target thymioupgrader
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 33%] Linking CXX executable ../../../bin/thymiownetconfig-cli
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 33%] Built target thymiownetconfig-cli
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 33%] Linking CXX executable ../../../bin/thymiownetconfig
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 36%] Built target thymiownetconfig
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 44%] Built target asebaqtplugins
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 48%] Built target asebaqtcommon
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 48%] Linking CXX executable ../../../bin/asebastudio
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 61%] Built target asebastudio
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 61%] Linking CXX executable ../../../bin/thymiovpl
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 68%] Built target thymiovpl
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 68%] Linking CXX executable ../../../bin/rendervplblocks
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 74%] Built target rendervplblocks
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 75%] Linking CXX executable ../../../bin/asebajoy
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 75%] Built target asebajoy
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 75%] Linking CXX executable ../../../bin/asebaswitch
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 75%] Built target asebaswitch
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 75%] Automatic MOC for target asebamedulla
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 75%] Built target asebamedulla_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 76%] Linking CXX executable ../../../bin/asebamedulla
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 76%] Built target asebamedulla
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 76%] Linking CXX executable ../../../bin/asebahttp
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 77%] Built target asebahttp
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 78%] Built target asebahttphub
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 79%] Built target asebahttp2hub
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 79%] Linking CXX executable ../../../bin/asebahttp2
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 81%] Built target asebahttp2
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 81%] Linking CXX executable ../../../bin/asebadummynode
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 82%] Built target asebadummynode
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 82%] Automatic MOC for target asebachallenge
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 82%] Built target asebachallenge_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 83%] Linking CXX executable ../../../bin/asebachallenge
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 87%] Built target asebachallenge
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 89%] Built target asebasim
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 89%] Automatic MOC for target asebaplayground
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 89%] Built target asebaplayground_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 89%] Linking CXX executable ../../../bin/asebaplayground
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 93%] Built target asebaplayground
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 93%] Linking CXX executable ../../../bin/asebashell
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 93%] Built target asebashell
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 93%] Automatic MOC for target aseba-qt-gui
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 93%] Built target aseba-qt-gui_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 94%] Linking CXX executable ../../../bin/aseba-qt-gui
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 94%] Built target aseba-qt-gui
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 95%] Automatic MOC for target aseba-qt-dbus
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 95%] Built target aseba-qt-dbus_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 95%] Built target aseba-qt-dbus
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 95%] Linking CXX executable ../../../bin/asebabotspeak
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 95%] Built target asebabotspeak
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 95%] Linking CXX executable ../../bin/asebatargetlist-dashelhub
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 95%] Built target asebatargetlist-dashelhub
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 95%] Linking CXX executable ../../bin/asebatargetadvertise
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 96%] Built target asebatargetadvertise
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 96%] Linking CXX executable ../../bin/asebatargetlist-thread
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 96%] Built target asebatargetlist-thread
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 96%] Automatic MOC for target asebatargetlist-qt
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 96%] Built target asebatargetlist-qt_autogen
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 96%] Linking CXX executable ../../bin/asebatargetlist-qt
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 97%] Built target asebatargetlist-qt
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 97%] Linking CXX executable ../../bin/tst_compiler_utf8
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 97%] Built target tst_compiler_utf8
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 97%] Linking CXX executable ../../bin/aseba-test-invalid-utf8
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 97%] Built target aseba-test-invalid-utf8
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 98%] Linking CXX executable ../../bin/aseba-test-msg
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 98%] Built target aseba-test-msg
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 98%] Built target asebavmdummycallbacks
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 98%] Linking CXX executable ../../bin/asebatest
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 99%] Built target asebatest
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 99%] Linking CXX executable ../../bin/aseba-test-natives-count
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[ 99%] Built target aseba-test-natives-count
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[100%] Linking CXX executable ../../bin/aseba-test-simulator
+make[3] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+[100%] Built target aseba-test-simulator
+make[2] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/dashel/dashel.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/dashel/dashel-posix.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/lib/libdashel.a
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/dashel/CMake/dashelConfig.cmake
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/dashel/CMake/dashelConfigVersion.cmake
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/enki/CMake/enkiConfig.cmake
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//.
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./BluetoothBase.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./PhysicalEngine.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./robots
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/e-puck
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/e-puck/EPuck.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/s-bot
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/s-bot/Sbot.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/s-bot/SbotObject.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/marxbot
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/marxbot/Marxbot.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/thymio2
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/thymio2/Thymio2.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/DifferentialWheeled.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/khepera
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/khepera/Khepera.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./Geometry.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./interactions
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./interactions/GroundSensor.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./interactions/Microphone.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./interactions/CircularCam.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./interactions/Bluetooth.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./interactions/IRSensor.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./interactions/ActiveSoundSource.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./Random.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./Interaction.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/enki//./Types.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/lib/libenki.a
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/viewer/Viewer.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/lib/libenkiviewer.a
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/lib/python2.7/site-packages/pyenki.so
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/lib/libasebacommon.a
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/common/utils/utils.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/common/utils/FormatableString.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/common/msg/msg.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/common/msg/NodesManager.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/common/msg/TargetDescription.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/common/consts.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/common/types.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/common/productids.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/lib/libasebaqtabout.a
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/lib/libasebazeroconf.a
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/common/zeroconf/zeroconf.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/common/zeroconf/zeroconf-thread.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/common/zeroconf/zeroconf-dashelhub.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/lib/libasebazeroconfqt.a
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/common/zeroconf/zeroconf-qt.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/lib/libasebavmbuffer.a
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/transport/buffer/vm-buffer.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/lib/libasebadashelplugins.a
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/transport/dashel_plugins/dashel-plugins.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/lib/libasebavm.a
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/vm/vm.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/vm/natives.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/lib/libasebacompiler.a
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/compiler/compiler.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/compiler/errors_code.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/asebacmd
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/asebadump
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/asebarec
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/asebaplay
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/asebaexec
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/asebamassloader
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/asebaeventlogger
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/thymioupgrader
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/thymiownetconfig
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/thymiownetconfig-cli
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/asebastudio
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/rendervplblocks
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/asebajoy
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/asebaswitch
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/asebamedulla
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/asebahttp
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/lib/libasebahttphub.a
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/switches/http/http.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/asebahttp2
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/lib/libasebahttp2hub.a
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/switches/http2/AeslProgram.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/switches/http2/HttpDashelTarget.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/switches/http2/HttpHandler.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/switches/http2/HttpInterface.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/switches/http2/HttpInterfaceHandlers.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/switches/http2/HttpRequest.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/include/aseba/switches/http2/HttpResponse.h
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/asebadummynode
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/asebachallenge
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/lib/libasebasim.a
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/bin/asebaplayground
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/applications/asebachallenge.desktop
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/applications/asebaonlinehelp.desktop
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/applications/asebaplayground.desktop
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/applications/asebastudio.desktop
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/applications/asebastudiothymio.desktop
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/applications/asebawebridge.desktop
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/applications/thymioupgrader.desktop
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/applications/thymiovpl.desktop
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/applications/thymiownetconfig.desktop
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/asebachallenge.png
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/asebahelp.png
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/asebaplayground.png
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/asebastudio.png
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/asebastudiothymio.png
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/scratchblock.png
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/thymioupgrader.png
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/thymiovpl.png
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/thymiowebbridge.png
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/thymiownetconfig.png
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/asebachallenge.svg
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/asebahelp.svg
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/asebaplayground.svg
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/asebastudio.svg
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/asebastudiothymio.svg
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/scratchblock.svg
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/thymioupgrader.svg
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/thymiovpl.svg
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/thymiowebbridge.svg
+-- Installing: /home/ragnarok/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/thymiownetconfig.svg
+make[1] : on quitte le répertoire « /home/ragnarok/compilation/git/aseba/debian/build »
+cp debian/README.Debian debian/tmp/usr/share/doc/aseba/
+dpkg-shlibdeps debian/tmp/usr/bin/*
+dpkg-shlibdeps: avertissement: la dépendance pourrait être évitée si « debian/tmp/usr/bin/asebastudio debian/tmp/usr/bin/asebaplayground debian/tmp/usr/bin/asebahttp debian/tmp/usr/bin/asebaswitch debian/tmp/usr/bin/rendervplblocks » n'y étaient pas lié avec libavahi-client.so.3 sans nécessité (ils n'utilisent aucun des symboles de la bibliothèque).
+dpkg-shlibdeps: avertissement: la dépendance pourrait être évitée si « debian/tmp/usr/bin/asebastudio debian/tmp/usr/bin/asebaplayground debian/tmp/usr/bin/asebahttp debian/tmp/usr/bin/asebaswitch debian/tmp/usr/bin/rendervplblocks » n'y étaient pas lié avec libavahi-common.so.3 sans nécessité (ils n'utilisent aucun des symboles de la bibliothèque).
+dpkg-shlibdeps: avertissement: la dépendance pourrait être évitée si « debian/tmp/usr/bin/asebaplayground debian/tmp/usr/bin/asebachallenge » n'y étaient pas lié avec libGLU.so.1 sans nécessité (ils n'utilisent aucun des symboles de la bibliothèque).
+dpkg-shlibdeps: avertissement: la dépendance pourrait être évitée si « debian/tmp/usr/bin/asebastudio » n'y était pas lié avec libQt5Sql.so.5 sans nécessité (il n'utilise aucun des symboles de la bibliothèque)
+dpkg-shlibdeps: avertissement: la dépendance pourrait être évitée si « debian/tmp/usr/bin/asebastudio debian/tmp/usr/bin/thymioupgrader » n'y étaient pas lié avec libQt5Concurrent.so.5 sans nécessité (ils n'utilisent aucun des symboles de la bibliothèque).
+dpkg-shlibdeps: avertissement: la dépendance pourrait être évitée si « debian/tmp/usr/bin/asebastudio debian/tmp/usr/bin/rendervplblocks » n'y étaient pas lié avec libQt5X11Extras.so.5 sans nécessité (ils n'utilisent aucun des symboles de la bibliothèque).
+chown -R root.root debian/tmp
+chmod -R o-s,go=u,go-ws debian/tmp
+dpkg-gencontrol
+dpkg --build debian/tmp ..
+dpkg-deb: building package 'aseba' in '../aseba_1.6.9_amd64.deb'.
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../aseba_1.6.9_amd64.changes
+dpkg-genchanges: info: envoi des binaires seulement (le code source n'est pas inclus)
+ dpkg-source -i --after-build .
+dpkg-buildpackage: info: envoi d'un binaire seulement (aucune inclusion de code source)
+Now running lintian aseba_1.6.9_amd64.changes ...
+E: aseba: unstripped-binary-or-object usr/bin/asebachallenge
+E: aseba: unstripped-binary-or-object usr/bin/asebacmd
+E: aseba: unstripped-binary-or-object usr/bin/asebadummynode
+E: aseba: unstripped-binary-or-object usr/bin/asebadump
+E: aseba: unstripped-binary-or-object usr/bin/asebaeventlogger
+E: aseba: unstripped-binary-or-object usr/bin/asebaexec
+E: aseba: unstripped-binary-or-object usr/bin/asebahttp
+E: aseba: unstripped-binary-or-object usr/bin/asebahttp2
+E: aseba: unstripped-binary-or-object usr/bin/asebajoy
+E: aseba: unstripped-binary-or-object usr/bin/asebamassloader
+E: aseba: unstripped-binary-or-object usr/bin/asebamedulla
+E: aseba: unstripped-binary-or-object usr/bin/asebaplay
+E: aseba: unstripped-binary-or-object usr/bin/asebaplayground
+E: aseba: unstripped-binary-or-object usr/bin/asebarec
+E: aseba: unstripped-binary-or-object usr/bin/asebastudio
+E: aseba: unstripped-binary-or-object usr/bin/asebaswitch
+E: aseba: unstripped-binary-or-object usr/bin/rendervplblocks
+E: aseba: unstripped-binary-or-object usr/bin/thymioupgrader
+E: aseba: unstripped-binary-or-object usr/bin/thymiownetconfig
+E: aseba: unstripped-binary-or-object usr/bin/thymiownetconfig-cli
+E: aseba: unstripped-binary-or-object usr/lib/python2.7/site-packages/pyenki.so
+E: aseba: changelog-file-not-compressed changelog
+E: aseba: copyright-should-refer-to-common-license-file-for-lgpl
+E: aseba: description-starts-with-package-name
+W: aseba: extended-description-line-too-long
+W: aseba: extended-description-line-too-long
+W: aseba: python-module-in-wrong-location usr/lib/python2.7/site-packages/pyenki.so usr/lib/python2.7/dist-packages/pyenki.so
+W: aseba: binary-without-manpage usr/bin/asebachallenge
+W: aseba: binary-without-manpage usr/bin/asebacmd
+W: aseba: binary-without-manpage usr/bin/asebadummynode
+W: aseba: binary-without-manpage usr/bin/asebadump
+W: aseba: binary-without-manpage usr/bin/asebaeventlogger
+W: aseba: binary-without-manpage usr/bin/asebaexec
+W: aseba: binary-without-manpage usr/bin/asebahttp
+W: aseba: binary-without-manpage usr/bin/asebahttp2
+W: aseba: binary-without-manpage usr/bin/asebajoy
+W: aseba: binary-without-manpage usr/bin/asebamassloader
+W: aseba: binary-without-manpage usr/bin/asebamedulla
+W: aseba: binary-without-manpage usr/bin/asebaplay
+W: aseba: binary-without-manpage usr/bin/asebaplayground
+W: aseba: binary-without-manpage usr/bin/asebarec
+W: aseba: binary-without-manpage usr/bin/asebastudio
+W: aseba: binary-without-manpage usr/bin/asebaswitch
+W: aseba: binary-without-manpage usr/bin/rendervplblocks
+W: aseba: binary-without-manpage usr/bin/thymioupgrader
+W: aseba: binary-without-manpage usr/bin/thymiownetconfig
+W: aseba: binary-without-manpage usr/bin/thymiownetconfig-cli
+W: aseba: desktop-command-not-in-package usr/share/applications/asebaonlinehelp.desktop xdg-open
+W: aseba: desktop-command-not-in-package usr/share/applications/thymiovpl.desktop thymiovpl
+E: aseba: python-package-missing-depends-on-python
+Finished running lintian.

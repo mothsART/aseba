@@ -1,3 +1,10 @@
+aseba (1.6.9) sid; urgency=medium
+
+  * Packaging for debian (SID)
+
+ -- Cyrille Biot <cyrille@cbiot.fr>  Fri, 26 Jan 2018 09:15:43 +0100
+
+
 aseba (1.6.0) xenial; urgency=medium
 
   * Upstream 1.6.0
