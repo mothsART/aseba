@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Fri, 26 Jan 2018 09:15:43 +0100
+Source: aseba
+Binary: aseba
+Architecture: amd64
+Version: 1.6.9
+Distribution: stable
+Urgency: medium
+Maintainer: Stephane Magnenat <stephane@nospam.magnenant.net>
+Changed-By: Cyrille Biot <cyrille@cbiot.fr>
+Description:
+ aseba      - Aseba is an event-based framework for distributed mobile robots c
+Changes:
+ aseba (1.6.9) stable; urgency=medium
+ .
+   * Packaging for debian (SID)
+Checksums-Sha1:
+ 5cf498433e55e9abb917a1f0fe82242953f8f4b2 9973 aseba_1.6.9_amd64.buildinfo
+ 6247919dab11942f2a80a7bb1116860eddc4135c 17634996 aseba_1.6.9_amd64.deb
+Checksums-Sha256:
+ 8ffe0b4cb786532158e175213f1c57570c6e0a2d198b2245ce3b52f2384934eb 9973 aseba_1.6.9_amd64.buildinfo
+ 2ed8cec3ab7eac3b17bca4a848d8d2b4714ff669c72da99723ec3295a83acb1b 17634996 aseba_1.6.9_amd64.deb
+Files:
+ a009a1c751a8c640da2b1a45ea7afb79 9973 devel optional aseba_1.6.9_amd64.buildinfo
+ 25a8e0a3eab9d2b5cfcdb001248676ba 17634996 devel optional aseba_1.6.9_amd64.deb

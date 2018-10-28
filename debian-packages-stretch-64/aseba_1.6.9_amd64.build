@@ -1,0 +1,1604 @@
+ dpkg-buildpackage -rfakeroot -us -uc -i -b
+dpkg-buildpackage: info: paquet source aseba
+dpkg-buildpackage: info: version source 1.6.9
+dpkg-buildpackage: info: distribution source stable
+dpkg-buildpackage: info: source changé par Cyrille Biot <cyrille@cbiot.fr>
+ dpkg-source -i --before-build aseba
+dpkg-buildpackage: info: architecture hôte amd64
+ fakeroot debian/rules clean
+rm -rf debian/files debian/substvars debian/tmp debian/build
+ debian/rules build
+make: « build » est à jour.
+ fakeroot debian/rules binary
+mkdir -p debian/build
+cd debian/build && cmake -D USER_BUILD_VERSION=1.6.9 -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=../tmp/usr ../.. -DBUILD_SHARED_LIBS=OFF
+-- The C compiler identification is GNU 6.3.0
+-- The CXX compiler identification is GNU 6.3.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Git executable found
+-- libudev found
+Using dashel from /home/serveur/compilation/git/aseba/dashel
+-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libGL.so  
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found SDL2: /usr/lib/x86_64-linux-gnu/libSDL2main.a;/usr/lib/x86_64-linux-gnu/libSDL2.so;-lpthread  
+-- Found PythonInterp: /usr/bin/python (found version "2.7.13") 
+-- Python version from interpreter is 2.7.13
+-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython2.7.so (found version "2.7.13") 
+-- Python libs and executable found, looking for boost::python
+-- Boost version: 1.62.0
+-- Found the following Boost libraries:
+--   python
+-- boost::python found, generating python bindings
+-- SDL2 found, enabling joystick support
+-- Found Doxygen: /usr/bin/doxygen (found version "1.8.13") 
+Using Enki from /home/serveur/compilation/git/aseba/enki
+-- Found PythonInterp: /usr/bin/python (found suitable version "2.7.13", minimum required is "2.0") 
+-- Found Qwt: /usr/lib/libqwt-qt5.so (found version "6.1.2") 
+-- Found DNSSD: /usr/lib/x86_64-linux-gnu/libdns_sd.so  
+-- Found ZeroConf in /usr/include;/usr/lib/x86_64-linux-gnu/libdns_sd.so
+-- Enabling Dashel socketcan plugin
+-- Could NOT find Protobuf (missing:  Protobuf_INCLUDE_DIR) 
+-- Google Protobuf library and compiler *not* found, usage logging disabled.
+-- Qwt found, enabling plotting in Studio
+-- qcollectiongenerator executable found
+-- Found LibXml2: /usr/lib/x86_64-linux-gnu/libxml2.so (found version "2.9.4") 
+-- Looking for include file getopt.h
+-- Looking for include file getopt.h - found
+-- Found PythonInterp: /usr/bin/python (found version "2.7.13") 
+CMake Warning at tests/compiler/CMakeLists.txt:180 (message):
+  zzuf executable not found! Disabling fuzzy tests
+
+
+-- 
+-- The following packages have been found:
+
+ * PythonLibs
+ * Boost
+ * Doxygen
+ * Qt5Core
+ * Qt5Gui
+ * Qt5Widgets
+ * Qt5OpenGL
+ * Qt5Network
+ * Qt5Help
+ * Qt5Concurrent
+ * Qt5Xml
+ * Qt5Svg
+ * Qt5Test
+ * Qt5LinguistTools
+ * Qt5
+ * Qwt
+ * Qt5X11Extras
+ * Qt5DBus
+ * DNSSD
+ * Threads
+ * SDL2
+ * OpenGL
+ * LibXml2
+ * PythonInterp
+
+-- The following packages have not been found:
+
+ * Protobuf
+
+-- The following features have been enabled:
+
+ * DISCOVERY , Use AVAHI/DNSSD to discover compatible devices and their status
+ * ABOUT_QT , About Windows
+ * QT_ZEROCONF , Qt Zeroconf library ( depend on QtNetwork )
+ * MASSLOADER , Massloader ( depends on Qt xml )
+ * EVENT_LOGGER , Event Logger (depends on QWT) 
+ * STUDIO_ZEROCONF_SUPPORT , Zeroconf in Aseba Studio and VPL
+ * THYMIO_CONFIG , upgrader (depends on QtConcurrent )
+ * STUDIO , Studio
+ * JOY , Aseba Joy ( depends on SDL )
+
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    USER_BUILD_VERSION
+
+
+-- Build files have been written to: /home/serveur/compilation/git/aseba/debian/build
+cd debian/build && /usr/bin/make
+make[1] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[2] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target libavahi
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  0%] Building C object CMakeFiles/libavahi.dir/third_party/avahi-compat-libdns_sd/compat.c.o
+/home/serveur/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c: In function ‘service_browser_callback’:
+/home/serveur/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:653:22: warning: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+                 free(entry->name);
+                      ^~~~~
+In file included from /home/serveur/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:27:0:
+/usr/include/stdlib.h:444:13: note: expected ‘void *’ but argument is of type ‘const char *’
+ extern void free (void *__ptr) __THROW;
+             ^~~~
+/home/serveur/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:654:22: warning: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+                 free(entry->type);
+                      ^~~~~
+In file included from /home/serveur/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:27:0:
+/usr/include/stdlib.h:444:13: note: expected ‘void *’ but argument is of type ‘const char *’
+ extern void free (void *__ptr) __THROW;
+             ^~~~
+/home/serveur/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:655:22: warning: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+                 free(entry->domain);
+                      ^~~~~
+In file included from /home/serveur/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:27:0:
+/usr/include/stdlib.h:444:13: note: expected ‘void *’ but argument is of type ‘const char *’
+ extern void free (void *__ptr) __THROW;
+             ^~~~
+/home/serveur/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c: In function ‘domain_browser_callback’:
+/home/serveur/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:966:22: warning: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+                 free(entry->domain);
+                      ^~~~~
+In file included from /home/serveur/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:27:0:
+/usr/include/stdlib.h:444:13: note: expected ‘void *’ but argument is of type ‘const char *’
+ extern void free (void *__ptr) __THROW;
+             ^~~~
+/home/serveur/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c: In function ‘query_resolver_callback’:
+/home/serveur/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:1485:18: warning: passing argument 1 of ‘free’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+             free(entry->name);
+                  ^~~~~
+In file included from /home/serveur/compilation/git/aseba/third_party/avahi-compat-libdns_sd/compat.c:27:0:
+/usr/include/stdlib.h:444:13: note: expected ‘void *’ but argument is of type ‘const char *’
+ extern void free (void *__ptr) __THROW;
+             ^~~~
+[  1%] Linking C static library liblibavahi.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  1%] Built target libavahi
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target dashel
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  1%] Building CXX object dashel/CMakeFiles/dashel.dir/dashel/dashel-posix.cpp.o
+[  2%] Building CXX object dashel/CMakeFiles/dashel.dir/dashel/dashel-common.cpp.o
+[  2%] Linking CXX static library libdashel.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  2%] Built target dashel
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target portlist
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  2%] Building CXX object dashel/examples/CMakeFiles/portlist.dir/portlist.cpp.o
+[  2%] Linking CXX executable portlist
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  2%] Built target portlist
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target udp
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  2%] Building CXX object dashel/examples/CMakeFiles/udp.dir/udp.cpp.o
+[  3%] Linking CXX executable udp
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Built target udp
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target microterm
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Building CXX object dashel/examples/CMakeFiles/microterm.dir/microterm.cpp.o
+[  3%] Linking CXX executable microterm
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Built target microterm
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target dws
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Building CXX object dashel/examples/CMakeFiles/dws.dir/dws.cpp.o
+[  3%] Linking CXX executable dws
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Built target dws
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target chat
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Building CXX object dashel/examples/CMakeFiles/chat.dir/chat.cpp.o
+[  3%] Linking CXX executable chat
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Built target chat
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target reconnect
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Building CXX object dashel/examples/CMakeFiles/reconnect.dir/reconnect.cpp.o
+[  3%] Linking CXX executable reconnect
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Built target reconnect
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target enki
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  4%] Building CXX object enki/enki/CMakeFiles/enki.dir/Geometry.cpp.o
+[  4%] Building CXX object enki/enki/CMakeFiles/enki.dir/Types.cpp.o
+[  4%] Building CXX object enki/enki/CMakeFiles/enki.dir/PhysicalEngine.cpp.o
+[  4%] Building CXX object enki/enki/CMakeFiles/enki.dir/BluetoothBase.cpp.o
+[  4%] Building CXX object enki/enki/CMakeFiles/enki.dir/interactions/IRSensor.cpp.o
+[  5%] Building CXX object enki/enki/CMakeFiles/enki.dir/interactions/GroundSensor.cpp.o
+[  5%] Building CXX object enki/enki/CMakeFiles/enki.dir/interactions/CircularCam.cpp.o
+[  5%] Building CXX object enki/enki/CMakeFiles/enki.dir/interactions/Bluetooth.cpp.o
+[  5%] Building CXX object enki/enki/CMakeFiles/enki.dir/interactions/ActiveSoundSource.cpp.o
+[  6%] Building CXX object enki/enki/CMakeFiles/enki.dir/interactions/Microphone.cpp.o
+[  6%] Building CXX object enki/enki/CMakeFiles/enki.dir/robots/DifferentialWheeled.cpp.o
+[  6%] Building CXX object enki/enki/CMakeFiles/enki.dir/robots/khepera/Khepera.cpp.o
+[  6%] Building CXX object enki/enki/CMakeFiles/enki.dir/robots/e-puck/EPuck.cpp.o
+[  6%] Building CXX object enki/enki/CMakeFiles/enki.dir/robots/s-bot/Sbot.cpp.o
+[  7%] Building CXX object enki/enki/CMakeFiles/enki.dir/robots/s-bot/SbotObject.cpp.o
+[  7%] Building CXX object enki/enki/CMakeFiles/enki.dir/robots/marxbot/Marxbot.cpp.o
+[  7%] Building CXX object enki/enki/CMakeFiles/enki.dir/robots/thymio2/Thymio2.cpp.o
+[  7%] Linking CXX static library libenki.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  7%] Built target enki
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target enkiviewer_automoc
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  7%] Automatic moc and rcc for target enkiviewer
+Generating moc source enkiviewer_automoc.dir/moc_Viewer_ZNT4XLOVEESGFW.cpp
+Generating moc compilation enkiviewer_automoc.cpp
+Generating qrc source enkiviewer_automoc.dir/qrc_enki-viewer-te_EHT2WBQNQC37TS.cpp
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  7%] Built target enkiviewer_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target enkiviewer
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  7%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/Viewer.cpp.o
+[  7%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/EPuckModel.cpp.o
+[  7%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/EPuckBody.cpp.o
+[  7%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/EPuckRest.cpp.o
+[  8%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/EPuckRing.cpp.o
+[  8%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/EPuckWheelLeft.cpp.o
+[  8%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/EPuckWheelRight.cpp.o
+[  8%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/MarxbotModel.cpp.o
+[  8%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/MarxbotBase.cpp.o
+[  9%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/MarxbotWheel.cpp.o
+[  9%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/Thymio2Model.cpp.o
+[  9%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/Thymio2Body.cpp.o
+[  9%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/objects/Thymio2Wheel.cpp.o
+[ 10%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/enkiviewer_automoc.cpp.o
+[ 10%] Building CXX object enki/viewer/CMakeFiles/enkiviewer.dir/enkiviewer_automoc.dir/qrc_enki-viewer-te_EHT2WBQNQC37TS.cpp.o
+[ 10%] Linking CXX static library libenkiviewer.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 10%] Built target enkiviewer
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target pyenki
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 11%] Building CXX object enki/python/CMakeFiles/pyenki.dir/enki.cpp.o
+[ 11%] Linking CXX shared module pyenki.so
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 11%] Built target pyenki
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target testGeometry
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 12%] Building CXX object enki/tests/CMakeFiles/testGeometry.dir/testGeometry.cpp.o
+[ 12%] Linking CXX executable testGeometry
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 12%] Built target testGeometry
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target enkiMinimal
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 12%] Building CXX object enki/examples/minimal/CMakeFiles/enkiMinimal.dir/enkiMinimal.cpp.o
+[ 13%] Linking CXX executable enkiMinimal
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 13%] Built target enkiMinimal
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target enkiplayground_automoc
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 14%] Automatic moc for target enkiplayground
+Generating moc compilation enkiplayground_automoc.cpp
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 14%] Built target enkiplayground_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target enkiplayground
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 14%] Building CXX object enki/examples/playground/CMakeFiles/enkiplayground.dir/Playground.cpp.o
+[ 14%] Building CXX object enki/examples/playground/CMakeFiles/enkiplayground.dir/enkiplayground_automoc.cpp.o
+[ 14%] Linking CXX executable enkiplayground
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 14%] Built target enkiplayground
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebacommon
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 15%] Building CXX object aseba/common/CMakeFiles/asebacommon.dir/utils/FormatableString.cpp.o
+[ 15%] Building CXX object aseba/common/CMakeFiles/asebacommon.dir/utils/utils.cpp.o
+[ 15%] Building CXX object aseba/common/CMakeFiles/asebacommon.dir/utils/HexFile.cpp.o
+[ 15%] Building CXX object aseba/common/CMakeFiles/asebacommon.dir/utils/BootloaderInterface.cpp.o
+[ 15%] Building CXX object aseba/common/CMakeFiles/asebacommon.dir/msg/msg.cpp.o
+[ 16%] Building CXX object aseba/common/CMakeFiles/asebacommon.dir/msg/NodesManager.cpp.o
+[ 16%] Building CXX object aseba/common/CMakeFiles/asebacommon.dir/msg/TargetDescription.cpp.o
+[ 16%] Building CXX object aseba/common/CMakeFiles/asebacommon.dir/version.cpp.o
+[ 16%] Linking CXX static library libasebacommon.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 16%] Built target asebacommon
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 17%] Generating moc_AboutDialog.cpp
+[ 17%] Generating qrc_asebaqtabout.cpp
+Scanning dependencies of target asebaqtabout
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 17%] Building CXX object aseba/common/about/CMakeFiles/asebaqtabout.dir/AboutDialog.cpp.o
+[ 17%] Building CXX object aseba/common/about/CMakeFiles/asebaqtabout.dir/moc_AboutDialog.cpp.o
+[ 18%] Building CXX object aseba/common/about/CMakeFiles/asebaqtabout.dir/qrc_asebaqtabout.cpp.o
+[ 18%] Linking CXX static library libasebaqtabout.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 20%] Built target asebaqtabout
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebazeroconfqt_automoc
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 21%] Automatic moc for target asebazeroconfqt
+Generating moc source asebazeroconfqt_automoc.dir/moc_zeroconf-qt_USS7KMULWOBS4S.cpp
+Generating moc compilation asebazeroconfqt_automoc.cpp
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 21%] Built target asebazeroconfqt_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebadashelplugins
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 21%] Building CXX object aseba/transport/dashel_plugins/CMakeFiles/asebadashelplugins.dir/socketcan.cpp.o
+[ 21%] Linking CXX static library libasebadashelplugins.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 21%] Built target asebadashelplugins
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebazeroconf
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 21%] Building CXX object aseba/common/zeroconf/CMakeFiles/asebazeroconf.dir/zeroconf.cpp.o
+[ 21%] Building CXX object aseba/common/zeroconf/CMakeFiles/asebazeroconf.dir/txtrecord.cpp.o
+[ 21%] Building CXX object aseba/common/zeroconf/CMakeFiles/asebazeroconf.dir/target.cpp.o
+[ 21%] Building CXX object aseba/common/zeroconf/CMakeFiles/asebazeroconf.dir/zeroconf-thread.cpp.o
+[ 22%] Building CXX object aseba/common/zeroconf/CMakeFiles/asebazeroconf.dir/zeroconf-dashelhub.cpp.o
+[ 22%] Linking CXX static library libasebazeroconf.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 22%] Built target asebazeroconf
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebazeroconfqt
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 22%] Building CXX object aseba/common/zeroconf/CMakeFiles/asebazeroconfqt.dir/zeroconf-qt.cpp.o
+[ 22%] Building CXX object aseba/common/zeroconf/CMakeFiles/asebazeroconfqt.dir/asebazeroconfqt_automoc.cpp.o
+[ 22%] Linking CXX static library libasebazeroconfqt.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 22%] Built target asebazeroconfqt
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebavm
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 22%] Building C object aseba/vm/CMakeFiles/asebavm.dir/vm.c.o
+[ 22%] Building C object aseba/vm/CMakeFiles/asebavm.dir/natives.c.o
+[ 23%] Linking C static library libasebavm.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 23%] Built target asebavm
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebavmbuffer
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 23%] Building C object aseba/transport/buffer/CMakeFiles/asebavmbuffer.dir/vm-buffer.c.o
+[ 23%] Linking C static library libasebavmbuffer.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 23%] Built target asebavmbuffer
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebacompiler
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 23%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/compiler.cpp.o
+[ 24%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/errors.cpp.o
+[ 24%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/identifier-lookup.cpp.o
+[ 24%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/lexer.cpp.o
+[ 24%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/parser.cpp.o
+[ 25%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/analysis.cpp.o
+[ 25%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/tree-build.cpp.o
+[ 25%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/tree-expand.cpp.o
+[ 25%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/tree-dump.cpp.o
+[ 25%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/tree-typecheck.cpp.o
+[ 26%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/tree-optimize.cpp.o
+[ 26%] Building CXX object aseba/compiler/CMakeFiles/asebacompiler.dir/tree-emit.cpp.o
+[ 26%] Linking CXX static library libasebacompiler.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 26%] Built target asebacompiler
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebacmd
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 26%] Building CXX object aseba/clients/cmd/CMakeFiles/asebacmd.dir/cmd.cpp.o
+[ 26%] Linking CXX executable ../../../bin/asebacmd
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 26%] Built target asebacmd
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebadump
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 26%] Building CXX object aseba/clients/dump/CMakeFiles/asebadump.dir/dump.cpp.o
+[ 27%] Linking CXX executable ../../../bin/asebadump
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 27%] Built target asebadump
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebaplay
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 27%] Building CXX object aseba/clients/replay/CMakeFiles/asebaplay.dir/play.cpp.o
+[ 27%] Linking CXX executable ../../../bin/asebaplay
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 27%] Built target asebaplay
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebarec
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Building CXX object aseba/clients/replay/CMakeFiles/asebarec.dir/rec.cpp.o
+[ 28%] Linking CXX executable ../../../bin/asebarec
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Built target asebarec
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebaexec
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Building CXX object aseba/clients/exec/CMakeFiles/asebaexec.dir/exec.cpp.o
+[ 28%] Linking CXX executable ../../../bin/asebaexec
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Built target asebaexec
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebamassloader
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Building CXX object aseba/clients/massloader/CMakeFiles/asebamassloader.dir/massloader.cpp.o
+[ 28%] Linking CXX executable ../../../bin/asebamassloader
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Built target asebamassloader
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebaeventlogger
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Building CXX object aseba/clients/eventlogger/CMakeFiles/asebaeventlogger.dir/eventlogger.cpp.o
+[ 28%] Linking CXX executable ../../../bin/asebaeventlogger
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Built target asebaeventlogger
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Generating moc_ThymioUpgrader.cpp
+[ 28%] Generating qrc_thymioupgrader.cpp
+Scanning dependencies of target thymioupgrader
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 29%] Building CXX object aseba/clients/thymioupgrader/CMakeFiles/thymioupgrader.dir/ThymioUpgrader.cpp.o
+[ 29%] Building CXX object aseba/clients/thymioupgrader/CMakeFiles/thymioupgrader.dir/moc_ThymioUpgrader.cpp.o
+[ 29%] Building CXX object aseba/clients/thymioupgrader/CMakeFiles/thymioupgrader.dir/qrc_thymioupgrader.cpp.o
+[ 29%] Linking CXX executable ../../../bin/thymioupgrader
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 31%] Built target thymioupgrader
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target thymiownetconfig-cli
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 31%] Building C object aseba/clients/thymiownetconfig/CMakeFiles/thymiownetconfig-cli.dir/thymiownetconfig-cli.c.o
+[ 32%] Linking CXX executable ../../../bin/thymiownetconfig-cli
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 32%] Built target thymiownetconfig-cli
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 32%] Generating moc_ThymioWNetConfig.cpp
+[ 32%] Generating qrc_thymiownetconfig.cpp
+Scanning dependencies of target thymiownetconfig
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 33%] Building CXX object aseba/clients/thymiownetconfig/CMakeFiles/thymiownetconfig.dir/ThymioWNetConfig.cpp.o
+[ 33%] Building CXX object aseba/clients/thymiownetconfig/CMakeFiles/thymiownetconfig.dir/moc_ThymioWNetConfig.cpp.o
+[ 33%] Building CXX object aseba/clients/thymiownetconfig/CMakeFiles/thymiownetconfig.dir/qrc_thymiownetconfig.cpp.o
+[ 33%] Linking CXX executable ../../../bin/thymiownetconfig
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 35%] Built target thymiownetconfig
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 35%] Generating ThymioVPL/moc_LogSignalMapper.cpp
+[ 35%] Generating moc_VariablesViewPlugin.cpp
+[ 35%] Generating moc_StopThymioPlugin.cpp
+[ 35%] Generating ThymioVPL/moc_ThymioVisualProgramming.cpp
+[ 35%] Generating ThymioVPL/moc_ResizingView.cpp
+[ 36%] Generating ThymioVPL/moc_Buttons.cpp
+[ 36%] Generating ThymioVPL/moc_Block.cpp
+[ 36%] Generating ThymioVPL/moc_EventBlocks.cpp
+[ 36%] Generating ThymioVPL/moc_ActionBlocks.cpp
+[ 37%] Generating ThymioVPL/moc_EventActionsSet.cpp
+[ 37%] Generating ThymioVPL/moc_Scene.cpp
+[ 37%] Generating ThymioVPL/moc_UsageLogger.cpp
+/home/serveur/compilation/git/aseba/aseba/clients/studio/plugins/ThymioVPL/UsageLogger.h:0: Note: No relevant classes found. No output generated.
+Scanning dependencies of target asebaqtplugins
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 37%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/VariablesViewPlugin.cpp.o
+[ 38%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/StopThymioPlugin.cpp.o
+[ 38%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/ThymioVisualProgramming.cpp.o
+[ 38%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/ResizingView.cpp.o
+[ 38%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/Buttons.cpp.o
+[ 38%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/Block.cpp.o
+[ 39%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/EventBlocks.cpp.o
+[ 39%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/StateBlocks.cpp.o
+[ 39%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/ActionBlocks.cpp.o
+[ 39%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/EventActionsSet.cpp.o
+[ 40%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/Scene.cpp.o
+[ 40%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/Compiler.cpp.o
+[ 40%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/CompilerVisitors.cpp.o
+[ 40%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/Style.cpp.o
+[ 40%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/Utils.cpp.o
+[ 41%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/LogSignalMapper.cpp.o
+[ 41%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/moc_VariablesViewPlugin.cpp.o
+[ 41%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/moc_StopThymioPlugin.cpp.o
+[ 41%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_ThymioVisualProgramming.cpp.o
+[ 41%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_ResizingView.cpp.o
+[ 42%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_Buttons.cpp.o
+[ 42%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_Block.cpp.o
+[ 42%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_EventBlocks.cpp.o
+[ 42%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_ActionBlocks.cpp.o
+[ 43%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_EventActionsSet.cpp.o
+[ 43%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_Scene.cpp.o
+[ 43%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_UsageLogger.cpp.o
+[ 43%] Building CXX object aseba/clients/studio/plugins/CMakeFiles/asebaqtplugins.dir/ThymioVPL/moc_LogSignalMapper.cpp.o
+[ 43%] Linking CXX static library libasebaqtplugins.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 43%] Built target asebaqtplugins
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 43%] Generating translations/moc_CompilerTranslator.cpp
+[ 43%] Generating moc_Target.cpp
+[ 43%] Generating moc_DashelTarget.cpp
+[ 43%] Generating moc_TargetModels.cpp
+[ 44%] Generating moc_AeslEditor.cpp
+Scanning dependencies of target asebaqtcommon
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 44%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/Target.cpp.o
+[ 44%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/DashelTarget.cpp.o
+[ 44%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/TargetModels.cpp.o
+[ 45%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/CustomWidgets.cpp.o
+[ 45%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/AeslEditor.cpp.o
+[ 45%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/Plugin.cpp.o
+[ 45%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/translations/CompilerTranslator.cpp.o
+[ 46%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/moc_Target.cpp.o
+[ 46%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/moc_DashelTarget.cpp.o
+[ 46%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/moc_TargetModels.cpp.o
+[ 46%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/moc_AeslEditor.cpp.o
+[ 46%] Building CXX object aseba/clients/studio/CMakeFiles/asebaqtcommon.dir/translations/moc_CompilerTranslator.cpp.o
+[ 47%] Linking CXX static library libasebaqtcommon.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 47%] Built target asebaqtcommon
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 48%] Generating aseba-doc.qch
+Construction de la structure de fichiers en cours...
+Insertion de filtres personnalisés...
+Insertion de données d'aide pour la section filtre (1 sur 5)...
+Insertion des fichiers...
+Insertion du contenu...
+Insertion des index...
+Insertion de données d'aide pour la section filtre (2 sur 5)...
+Insertion des fichiers...
+Insertion du contenu...
+Insertion des index...
+Insertion de données d'aide pour la section filtre (3 sur 5)...
+Insertion des fichiers...
+Insertion du contenu...
+Insertion des index...
+Insertion de données d'aide pour la section filtre (4 sur 5)...
+Insertion des fichiers...
+Insertion du contenu...
+Insertion des index...
+Insertion de données d'aide pour la section filtre (5 sur 5)...
+Insertion des fichiers...
+Insertion du contenu...
+Insertion des index...
+Documentation générée avec succès.
+[ 48%] Generating qrc_asebastudio.cpp
+[ 48%] Generating aseba-doc.qhc
+Reading collection config file...
+Creating collection file...
+[ 49%] Generating qrc_asebastudiohelp.cpp
+[ 49%] Generating moc_ThymioVPLStandalone.cpp
+Scanning dependencies of target thymiovpl
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 49%] Building CXX object aseba/clients/studio/CMakeFiles/thymiovpl.dir/qrc_asebastudio.cpp.o
+[ 49%] Building CXX object aseba/clients/studio/CMakeFiles/thymiovpl.dir/qrc_asebastudiohelp.cpp.o
+[ 49%] Building CXX object aseba/clients/studio/CMakeFiles/thymiovpl.dir/ThymioVPLStandalone.cpp.o
+[ 49%] Building CXX object aseba/clients/studio/CMakeFiles/thymiovpl.dir/moc_ThymioVPLStandalone.cpp.o
+[ 50%] Building CXX object aseba/clients/studio/CMakeFiles/thymiovpl.dir/thymiovpl.cpp.o
+[ 50%] Linking CXX executable ../../../bin/thymiovpl
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 54%] Built target thymiovpl
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 55%] Generating moc_StudioAeslEditor.cpp
+[ 55%] Generating moc_MainWindow.cpp
+[ 55%] Generating moc_NamedValuesVectorModel.cpp
+[ 55%] Generating moc_ClickableLabel.cpp
+[ 55%] Generating moc_CustomDelegate.cpp
+[ 56%] Generating moc_FindDialog.cpp
+[ 56%] Generating moc_EventViewer.cpp
+[ 56%] Generating moc_HelpViewer.cpp
+[ 56%] Generating moc_ConfigDialog.cpp
+[ 57%] Generating moc_ModelAggregator.cpp
+Scanning dependencies of target asebastudio
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 57%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/StudioAeslEditor.cpp.o
+[ 57%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/PluginRegistry.cpp.o
+[ 57%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/MainWindow.cpp.o
+[ 58%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/NamedValuesVectorModel.cpp.o
+[ 58%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/ClickableLabel.cpp.o
+[ 58%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/CustomDelegate.cpp.o
+[ 58%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/main.cpp.o
+[ 58%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/FindDialog.cpp.o
+[ 59%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/EventViewer.cpp.o
+[ 59%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/HelpViewer.cpp.o
+[ 59%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/ConfigDialog.cpp.o
+[ 59%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/ModelAggregator.cpp.o
+[ 59%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_StudioAeslEditor.cpp.o
+[ 60%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_MainWindow.cpp.o
+[ 60%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_NamedValuesVectorModel.cpp.o
+[ 60%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_ClickableLabel.cpp.o
+[ 60%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_CustomDelegate.cpp.o
+[ 61%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_FindDialog.cpp.o
+[ 61%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_EventViewer.cpp.o
+[ 61%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_HelpViewer.cpp.o
+[ 61%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_ConfigDialog.cpp.o
+[ 61%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/moc_ModelAggregator.cpp.o
+[ 62%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/qrc_asebastudio.cpp.o
+[ 62%] Building CXX object aseba/clients/studio/CMakeFiles/asebastudio.dir/qrc_asebastudiohelp.cpp.o
+[ 62%] Linking CXX executable ../../../bin/asebastudio
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 67%] Built target asebastudio
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target rendervplblocks
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 68%] Building CXX object aseba/clients/studio/CMakeFiles/rendervplblocks.dir/rendervplblocks.cpp.o
+[ 68%] Building CXX object aseba/clients/studio/CMakeFiles/rendervplblocks.dir/qrc_asebastudio.cpp.o
+[ 68%] Building CXX object aseba/clients/studio/CMakeFiles/rendervplblocks.dir/qrc_asebastudiohelp.cpp.o
+[ 68%] Linking CXX executable ../../../bin/rendervplblocks
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 73%] Built target rendervplblocks
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebajoy
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 73%] Building CXX object aseba/clients/joy/CMakeFiles/asebajoy.dir/asebajoy.cpp.o
+[ 74%] Linking CXX executable ../../../bin/asebajoy
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 74%] Built target asebajoy
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebaswitch
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 74%] Building CXX object aseba/switches/switch/CMakeFiles/asebaswitch.dir/switch.cpp.o
+[ 74%] Linking CXX executable ../../../bin/asebaswitch
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 74%] Built target asebaswitch
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebamedulla_automoc
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 74%] Automatic moc for target asebamedulla
+Generating moc source asebamedulla_automoc.dir/moc_medulla_VEGGBZDC22J6KK.cpp
+Generating moc compilation asebamedulla_automoc.cpp
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 74%] Built target asebamedulla_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebamedulla
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 74%] Building CXX object aseba/switches/medulla/CMakeFiles/asebamedulla.dir/medulla.cpp.o
+[ 74%] Building CXX object aseba/switches/medulla/CMakeFiles/asebamedulla.dir/asebamedulla_automoc.cpp.o
+[ 75%] Linking CXX executable ../../../bin/asebamedulla
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 75%] Built target asebamedulla
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebahttphub
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 76%] Building CXX object aseba/switches/http/CMakeFiles/asebahttphub.dir/http.cpp.o
+[ 76%] Building CXX object aseba/switches/http/CMakeFiles/asebahttphub.dir/main.cpp.o
+[ 76%] Linking CXX static library libasebahttphub.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 76%] Built target asebahttphub
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebahttp
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 77%] Building CXX object aseba/switches/http/CMakeFiles/asebahttp.dir/http.cpp.o
+[ 77%] Building CXX object aseba/switches/http/CMakeFiles/asebahttp.dir/main.cpp.o
+[ 77%] Linking CXX executable ../../../bin/asebahttp
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 77%] Built target asebahttp
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebahttp2hub
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 77%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2hub.dir/AeslProgram.cpp.o
+[ 77%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2hub.dir/HttpDashelTarget.cpp.o
+[ 77%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2hub.dir/HttpInterface.cpp.o
+[ 78%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2hub.dir/HttpInterfaceHandlers.cpp.o
+[ 78%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2hub.dir/HttpRequest.cpp.o
+[ 78%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2hub.dir/HttpResponse.cpp.o
+[ 78%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2hub.dir/main.cpp.o
+/home/serveur/compilation/git/aseba/aseba/switches/http2/main.cpp: In function ‘int main(int, char**)’:
+/home/serveur/compilation/git/aseba/aseba/switches/http2/main.cpp:85:8: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   std::auto_ptr<Aseba::Http::HttpInterface> interface(new Aseba::Http::HttpInterface(httpPort));
+        ^~~~~~~~
+In file included from /usr/include/c++/6/memory:81:0,
+                 from /home/serveur/compilation/git/aseba/aseba/switches/http2/main.cpp:23:
+/usr/include/c++/6/bits/unique_ptr.h:49:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+[ 78%] Linking CXX static library libasebahttp2hub.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 78%] Built target asebahttp2hub
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebahttp2
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 78%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2.dir/AeslProgram.cpp.o
+[ 78%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2.dir/HttpDashelTarget.cpp.o
+[ 79%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2.dir/HttpInterface.cpp.o
+[ 79%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2.dir/HttpInterfaceHandlers.cpp.o
+[ 79%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2.dir/HttpRequest.cpp.o
+[ 79%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2.dir/HttpResponse.cpp.o
+[ 80%] Building CXX object aseba/switches/http2/CMakeFiles/asebahttp2.dir/main.cpp.o
+/home/serveur/compilation/git/aseba/aseba/switches/http2/main.cpp: In function ‘int main(int, char**)’:
+/home/serveur/compilation/git/aseba/aseba/switches/http2/main.cpp:85:8: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   std::auto_ptr<Aseba::Http::HttpInterface> interface(new Aseba::Http::HttpInterface(httpPort));
+        ^~~~~~~~
+In file included from /usr/include/c++/6/memory:81:0,
+                 from /home/serveur/compilation/git/aseba/aseba/switches/http2/main.cpp:23:
+/usr/include/c++/6/bits/unique_ptr.h:49:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+[ 80%] Linking CXX executable ../../../bin/asebahttp2
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 80%] Built target asebahttp2
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebadummynode
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 81%] Building CXX object aseba/targets/dummy/CMakeFiles/asebadummynode.dir/dummynode.cpp.o
+[ 81%] Building C object aseba/targets/dummy/CMakeFiles/asebadummynode.dir/dummynode_description.c.o
+[ 81%] Linking CXX executable ../../../bin/asebadummynode
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 81%] Built target asebadummynode
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebachallenge_automoc
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 81%] Automatic moc for target asebachallenge
+Generating moc source asebachallenge_automoc.dir/moc_challenge_PPTB3V2TB5RMAO.cpp
+Generating moc compilation asebachallenge_automoc.cpp
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 81%] Built target asebachallenge_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 81%] Generating qrc_challenge-textures.cpp
+Scanning dependencies of target asebachallenge
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 82%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/challenge.cpp.o
+[ 82%] Building C object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/challenge-vm-description.c.o
+[ 82%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/objects/food_base.cpp.o
+[ 82%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/objects/food_charge0.cpp.o
+[ 82%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/objects/food_charge1.cpp.o
+[ 83%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/objects/food_charge2.cpp.o
+[ 83%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/objects/food_charge3.cpp.o
+[ 83%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/objects/food_ring.cpp.o
+[ 83%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/qrc_challenge-textures.cpp.o
+[ 83%] Building CXX object aseba/targets/challenge/CMakeFiles/asebachallenge.dir/asebachallenge_automoc.cpp.o
+[ 84%] Linking CXX executable ../../../bin/asebachallenge
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 86%] Built target asebachallenge
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebaplayground_automoc
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 86%] Automatic moc for target asebaplayground
+Generating moc source asebaplayground_automoc.dir/moc_PlaygroundDBus_2JIEIFSNC6RXL3.cpp
+Generating moc source asebaplayground_automoc.dir/moc_PlaygroundView_ZMSKDPDUFTC5X5.cpp
+Generating moc compilation asebaplayground_automoc.cpp
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 86%] Built target asebaplayground_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebasim
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 86%] Building CXX object aseba/targets/playground/CMakeFiles/asebasim.dir/EnkiGlue.cpp.o
+[ 87%] Building CXX object aseba/targets/playground/CMakeFiles/asebasim.dir/AsebaGlue.cpp.o
+[ 87%] Building CXX object aseba/targets/playground/CMakeFiles/asebasim.dir/DirectAsebaGlue.cpp.o
+[ 87%] Building CXX object aseba/targets/playground/CMakeFiles/asebasim.dir/Door.cpp.o
+[ 87%] Building CXX object aseba/targets/playground/CMakeFiles/asebasim.dir/robots/e-puck/EPuck.cpp.o
+[ 88%] Building C object aseba/targets/playground/CMakeFiles/asebasim.dir/robots/e-puck/EPuck-descriptions.c.o
+[ 88%] Building CXX object aseba/targets/playground/CMakeFiles/asebasim.dir/robots/thymio2/Thymio2.cpp.o
+[ 88%] Building CXX object aseba/targets/playground/CMakeFiles/asebasim.dir/robots/thymio2/Thymio2-natives.cpp.o
+[ 88%] Building C object aseba/targets/playground/CMakeFiles/asebasim.dir/robots/thymio2/Thymio2-descriptions.c.o
+[ 88%] Linking CXX static library libasebasim.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 88%] Built target asebasim
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 88%] Generating qrc_asebaplayground.cpp
+Scanning dependencies of target asebaplayground
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 88%] Building CXX object aseba/targets/playground/CMakeFiles/asebaplayground.dir/DashelAsebaGlue.cpp.o
+[ 88%] Building CXX object aseba/targets/playground/CMakeFiles/asebaplayground.dir/PlaygroundViewer.cpp.o
+[ 88%] Building CXX object aseba/targets/playground/CMakeFiles/asebaplayground.dir/PlaygroundDBusAdaptors.cpp.o
+[ 88%] Building CXX object aseba/targets/playground/CMakeFiles/asebaplayground.dir/playground.cpp.o
+[ 89%] Building CXX object aseba/targets/playground/CMakeFiles/asebaplayground.dir/qrc_asebaplayground.cpp.o
+[ 89%] Building CXX object aseba/targets/playground/CMakeFiles/asebaplayground.dir/asebaplayground_automoc.cpp.o
+[ 89%] Linking CXX executable ../../../bin/asebaplayground
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 92%] Built target asebaplayground
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebashell
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 92%] Building CXX object examples/clients/cpp-shell/CMakeFiles/asebashell.dir/shell.cpp.o
+[ 92%] Linking CXX executable ../../../bin/asebashell
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 92%] Built target asebashell
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target aseba-qt-gui_automoc
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 92%] Automatic moc for target aseba-qt-gui
+Generating moc source aseba-qt-gui_automoc.dir/moc_dashelinterfac_W5FTEGDBYBKU5B.cpp
+Generating moc source aseba-qt-gui_automoc.dir/moc_mainwindow_L2CLFKCLUYECYY.cpp
+Generating moc compilation aseba-qt-gui_automoc.cpp
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 92%] Built target aseba-qt-gui_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target aseba-qt-gui
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 92%] Building CXX object examples/clients/cpp-qt-gui/CMakeFiles/aseba-qt-gui.dir/main.cpp.o
+[ 92%] Building CXX object examples/clients/cpp-qt-gui/CMakeFiles/aseba-qt-gui.dir/dashelinterface.cpp.o
+[ 92%] Building CXX object examples/clients/cpp-qt-gui/CMakeFiles/aseba-qt-gui.dir/mainwindow.cpp.o
+[ 92%] Building CXX object examples/clients/cpp-qt-gui/CMakeFiles/aseba-qt-gui.dir/aseba-qt-gui_automoc.cpp.o
+[ 93%] Linking CXX executable ../../../bin/aseba-qt-gui
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 93%] Built target aseba-qt-gui
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target aseba-qt-dbus_automoc
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 94%] Automatic moc for target aseba-qt-dbus
+Generating moc source aseba-qt-dbus_automoc.dir/moc_dbusinterface_TPJUPV7AYF3NOT.cpp
+Generating moc compilation aseba-qt-dbus_automoc.cpp
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 94%] Built target aseba-qt-dbus_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target aseba-qt-dbus
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 94%] Building CXX object examples/clients/cpp-qt-dbus/CMakeFiles/aseba-qt-dbus.dir/main.cpp.o
+[ 94%] Building CXX object examples/clients/cpp-qt-dbus/CMakeFiles/aseba-qt-dbus.dir/dbusinterface.cpp.o
+[ 94%] Building CXX object examples/clients/cpp-qt-dbus/CMakeFiles/aseba-qt-dbus.dir/aseba-qt-dbus_automoc.cpp.o
+[ 94%] Linking CXX executable ../../../bin/aseba-qt-dbus
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 94%] Built target aseba-qt-dbus
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebabotspeak
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 94%] Building CXX object examples/switches/botspeak/CMakeFiles/asebabotspeak.dir/botspeak.cpp.o
+[ 94%] Linking CXX executable ../../../bin/asebabotspeak
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 94%] Built target asebabotspeak
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebatargetlist-qt_automoc
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 94%] Automatic moc for target asebatargetlist-qt
+Generating moc source asebatargetlist-qt_automoc.dir/moc_targetlist-qt_75ROLSPUJIHVZ5.cpp
+Generating moc compilation asebatargetlist-qt_automoc.cpp
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 94%] Built target asebatargetlist-qt_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebatargetlist-qt
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 95%] Building CXX object examples/zeroconf/CMakeFiles/asebatargetlist-qt.dir/targetlist-qt.cpp.o
+[ 95%] Building CXX object examples/zeroconf/CMakeFiles/asebatargetlist-qt.dir/asebatargetlist-qt_automoc.cpp.o
+[ 95%] Linking CXX executable ../../bin/asebatargetlist-qt
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 95%] Built target asebatargetlist-qt
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebatargetlist-dashelhub
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 95%] Building CXX object examples/zeroconf/CMakeFiles/asebatargetlist-dashelhub.dir/targetlist-dashelhub.cpp.o
+[ 95%] Linking CXX executable ../../bin/asebatargetlist-dashelhub
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 95%] Built target asebatargetlist-dashelhub
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebatargetadvertise
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 96%] Building CXX object examples/zeroconf/CMakeFiles/asebatargetadvertise.dir/targetadvertise.cpp.o
+[ 96%] Linking CXX executable ../../bin/asebatargetadvertise
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 96%] Built target asebatargetadvertise
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebatargetlist-thread
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 96%] Building CXX object examples/zeroconf/CMakeFiles/asebatargetlist-thread.dir/targetlist-thread.cpp.o
+[ 97%] Linking CXX executable ../../bin/asebatargetlist-thread
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 97%] Built target asebatargetlist-thread
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target tst_compiler_utf8
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 97%] Building CXX object tests/common/CMakeFiles/tst_compiler_utf8.dir/utf8.cpp.o
+[ 97%] Linking CXX executable ../../bin/tst_compiler_utf8
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 97%] Built target tst_compiler_utf8
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target aseba-test-invalid-utf8
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 97%] Building CXX object tests/common/CMakeFiles/aseba-test-invalid-utf8.dir/aseba-test-invalid-utf8.cpp.o
+[ 97%] Linking CXX executable ../../bin/aseba-test-invalid-utf8
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 97%] Built target aseba-test-invalid-utf8
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target aseba-test-msg
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 97%] Building CXX object tests/msg/CMakeFiles/aseba-test-msg.dir/aseba-test-msg.cpp.o
+[ 98%] Linking CXX executable ../../bin/aseba-test-msg
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 98%] Built target aseba-test-msg
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebavmdummycallbacks
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 98%] Building CXX object tests/compiler/CMakeFiles/asebavmdummycallbacks.dir/asebavmdummycallbacks.cpp.o
+[ 99%] Linking CXX static library libasebavmdummycallbacks.a
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 99%] Built target asebavmdummycallbacks
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target asebatest
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 99%] Building CXX object tests/compiler/CMakeFiles/asebatest.dir/asebatest.cpp.o
+[ 99%] Linking CXX executable ../../bin/asebatest
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 99%] Built target asebatest
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target aseba-test-natives-count
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 99%] Building CXX object tests/vm/CMakeFiles/aseba-test-natives-count.dir/aseba-test-natives-count.cpp.o
+[ 99%] Linking CXX executable ../../bin/aseba-test-natives-count
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 99%] Built target aseba-test-natives-count
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Scanning dependencies of target aseba-test-simulator
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 99%] Building CXX object tests/simulator/CMakeFiles/aseba-test-simulator.dir/aseba-test-simulator.cpp.o
+[100%] Linking CXX executable ../../bin/aseba-test-simulator
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[100%] Built target aseba-test-simulator
+make[2] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[1] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+install -d debian/tmp/DEBIAN
+install -d debian/tmp/usr/bin
+install -d debian/tmp/usr/share/doc/aseba
+install -d debian/tmp/usr/share/doc/aseba/example-code
+install -d debian/tmp/usr/share/doc/aseba/example-scenarios
+cp changelog.md debian/tmp/usr/share/doc/aseba/changelog
+cp debian/changelog debian/tmp/usr/share/doc/aseba/changelog.debian
+cp debian/copyright debian/tmp/usr/share/doc/aseba
+cp aseba/targets/playground/examples/*.png debian/tmp/usr/share/doc/aseba/example-scenarios
+cp aseba/targets/playground/examples/*.playground debian/tmp/usr/share/doc/aseba/example-scenarios
+cp aseba/targets/playground/examples/thymio-default-behaviours.aesl debian/tmp/usr/share/doc/aseba/example-scenarios
+cp aseba/targets/playground/examples/*.aesl debian/tmp/usr/share/doc/aseba/example-code
+cp aseba/targets/challenge/examples/challenge-goto-energy.aesl debian/tmp/usr/share/doc/aseba/example-code
+strip --strip-unneeded -R .note -R .comment  debian/build/*/*.a
+strip --strip-unneeded -R .note -R .comment  debian/build/*/*/*.a
+cd debian/build && /usr/bin/make install
+make[1] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[2] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  1%] Built target libavahi
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  2%] Built target dashel
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  2%] Linking CXX executable portlist
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  2%] Built target portlist
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Linking CXX executable udp
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Built target udp
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Linking CXX executable microterm
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Built target microterm
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Linking CXX executable dws
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Built target dws
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Linking CXX executable chat
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Built target chat
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Linking CXX executable reconnect
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  3%] Built target reconnect
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  7%] Built target enki
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  7%] Automatic moc and rcc for target enkiviewer
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[  7%] Built target enkiviewer_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 10%] Built target enkiviewer
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 10%] Linking CXX shared module pyenki.so
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 11%] Built target pyenki
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 11%] Linking CXX executable testGeometry
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 12%] Built target testGeometry
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 13%] Linking CXX executable enkiMinimal
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 13%] Built target enkiMinimal
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 14%] Automatic moc for target enkiplayground
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 14%] Built target enkiplayground_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 14%] Linking CXX executable enkiplayground
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 14%] Built target enkiplayground
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 16%] Built target asebacommon
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 20%] Built target asebaqtabout
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 21%] Automatic moc for target asebazeroconfqt
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 21%] Built target asebazeroconfqt_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 21%] Built target asebadashelplugins
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 22%] Built target asebazeroconf
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 22%] Built target asebazeroconfqt
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 23%] Built target asebavm
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 23%] Built target asebavmbuffer
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 26%] Built target asebacompiler
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 26%] Linking CXX executable ../../../bin/asebacmd
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 26%] Built target asebacmd
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 27%] Linking CXX executable ../../../bin/asebadump
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 27%] Built target asebadump
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 27%] Linking CXX executable ../../../bin/asebaplay
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 27%] Built target asebaplay
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 27%] Linking CXX executable ../../../bin/asebarec
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Built target asebarec
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Linking CXX executable ../../../bin/asebaexec
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Built target asebaexec
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Linking CXX executable ../../../bin/asebamassloader
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Built target asebamassloader
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Linking CXX executable ../../../bin/asebaeventlogger
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Built target asebaeventlogger
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 28%] Linking CXX executable ../../../bin/thymioupgrader
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 31%] Built target thymioupgrader
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 32%] Linking CXX executable ../../../bin/thymiownetconfig-cli
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 32%] Built target thymiownetconfig-cli
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 32%] Linking CXX executable ../../../bin/thymiownetconfig
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 35%] Built target thymiownetconfig
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 43%] Built target asebaqtplugins
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 47%] Built target asebaqtcommon
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 47%] Linking CXX executable ../../../bin/thymiovpl
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 54%] Built target thymiovpl
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 54%] Linking CXX executable ../../../bin/asebastudio
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 67%] Built target asebastudio
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 67%] Linking CXX executable ../../../bin/rendervplblocks
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 73%] Built target rendervplblocks
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 74%] Linking CXX executable ../../../bin/asebajoy
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 74%] Built target asebajoy
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 74%] Linking CXX executable ../../../bin/asebaswitch
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 74%] Built target asebaswitch
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 74%] Automatic moc for target asebamedulla
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 74%] Built target asebamedulla_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 75%] Linking CXX executable ../../../bin/asebamedulla
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 75%] Built target asebamedulla
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 76%] Built target asebahttphub
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 76%] Linking CXX executable ../../../bin/asebahttp
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 77%] Built target asebahttp
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 78%] Built target asebahttp2hub
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 78%] Linking CXX executable ../../../bin/asebahttp2
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 80%] Built target asebahttp2
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 80%] Linking CXX executable ../../../bin/asebadummynode
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 81%] Built target asebadummynode
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 81%] Automatic moc for target asebachallenge
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 81%] Built target asebachallenge_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 82%] Linking CXX executable ../../../bin/asebachallenge
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 86%] Built target asebachallenge
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 86%] Automatic moc for target asebaplayground
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 86%] Built target asebaplayground_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 88%] Built target asebasim
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 88%] Linking CXX executable ../../../bin/asebaplayground
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 92%] Built target asebaplayground
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 92%] Linking CXX executable ../../../bin/asebashell
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 92%] Built target asebashell
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 92%] Automatic moc for target aseba-qt-gui
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 92%] Built target aseba-qt-gui_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 93%] Linking CXX executable ../../../bin/aseba-qt-gui
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 93%] Built target aseba-qt-gui
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 94%] Automatic moc for target aseba-qt-dbus
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 94%] Built target aseba-qt-dbus_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 94%] Built target aseba-qt-dbus
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 94%] Linking CXX executable ../../../bin/asebabotspeak
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 94%] Built target asebabotspeak
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 94%] Automatic moc for target asebatargetlist-qt
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 94%] Built target asebatargetlist-qt_automoc
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 94%] Linking CXX executable ../../bin/asebatargetlist-qt
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 95%] Built target asebatargetlist-qt
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 95%] Linking CXX executable ../../bin/asebatargetlist-dashelhub
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 95%] Built target asebatargetlist-dashelhub
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 95%] Linking CXX executable ../../bin/asebatargetadvertise
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 96%] Built target asebatargetadvertise
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 97%] Linking CXX executable ../../bin/asebatargetlist-thread
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 97%] Built target asebatargetlist-thread
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 97%] Linking CXX executable ../../bin/tst_compiler_utf8
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 97%] Built target tst_compiler_utf8
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 97%] Linking CXX executable ../../bin/aseba-test-invalid-utf8
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 97%] Built target aseba-test-invalid-utf8
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 98%] Linking CXX executable ../../bin/aseba-test-msg
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 98%] Built target aseba-test-msg
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 99%] Built target asebavmdummycallbacks
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 99%] Linking CXX executable ../../bin/asebatest
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 99%] Built target asebatest
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 99%] Linking CXX executable ../../bin/aseba-test-natives-count
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[ 99%] Built target aseba-test-natives-count
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+make[3] : on entre dans le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[100%] Linking CXX executable ../../bin/aseba-test-simulator
+make[3] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+[100%] Built target aseba-test-simulator
+make[2] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/dashel/dashel.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/dashel/dashel-posix.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/lib/libdashel.a
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/dashel/CMake/dashelConfig.cmake
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/dashel/CMake/dashelConfigVersion.cmake
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/enki/CMake/enkiConfig.cmake
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//.
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./Types.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./Random.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./Geometry.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./BluetoothBase.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./robots
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/e-puck
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/e-puck/EPuck.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/thymio2
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/thymio2/Thymio2.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/s-bot
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/s-bot/SbotObject.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/s-bot/Sbot.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/khepera
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/khepera/Khepera.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/marxbot
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/marxbot/Marxbot.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./robots/DifferentialWheeled.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./interactions
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./interactions/Microphone.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./interactions/IRSensor.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./interactions/CircularCam.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./interactions/ActiveSoundSource.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./interactions/Bluetooth.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./interactions/GroundSensor.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./PhysicalEngine.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/enki//./Interaction.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/lib/libenki.a
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/viewer/Viewer.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/lib/libenkiviewer.a
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/lib/python2.7/site-packages/pyenki.so
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/lib/libasebacommon.a
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/common/utils/utils.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/common/utils/FormatableString.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/common/msg/msg.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/common/msg/NodesManager.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/common/msg/TargetDescription.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/common/consts.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/common/types.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/common/productids.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/lib/libasebaqtabout.a
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/lib/libasebazeroconf.a
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/common/zeroconf/zeroconf.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/common/zeroconf/zeroconf-thread.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/common/zeroconf/zeroconf-dashelhub.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/lib/libasebazeroconfqt.a
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/common/zeroconf/zeroconf-qt.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/lib/libasebavmbuffer.a
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/transport/buffer/vm-buffer.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/lib/libasebadashelplugins.a
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/transport/dashel_plugins/dashel-plugins.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/lib/libasebavm.a
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/vm/vm.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/vm/natives.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/lib/libasebacompiler.a
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/compiler/compiler.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/compiler/errors_code.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/asebacmd
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/asebadump
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/asebarec
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/asebaplay
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/asebaexec
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/asebamassloader
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/asebaeventlogger
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/thymioupgrader
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/thymiownetconfig
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/thymiownetconfig-cli
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/asebastudio
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/rendervplblocks
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/asebajoy
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/asebaswitch
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/asebamedulla
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/asebahttp
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/lib/libasebahttphub.a
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/switches/http/http.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/asebahttp2
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/lib/libasebahttp2hub.a
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/switches/http2/AeslProgram.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/switches/http2/HttpDashelTarget.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/switches/http2/HttpHandler.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/switches/http2/HttpInterface.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/switches/http2/HttpInterfaceHandlers.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/switches/http2/HttpRequest.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/include/aseba/switches/http2/HttpResponse.h
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/asebadummynode
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/asebachallenge
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/lib/libasebasim.a
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/bin/asebaplayground
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/applications/asebachallenge.desktop
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/applications/asebaonlinehelp.desktop
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/applications/asebaplayground.desktop
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/applications/asebastudio.desktop
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/applications/asebastudiothymio.desktop
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/applications/asebawebridge.desktop
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/applications/thymioupgrader.desktop
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/applications/thymiovpl.desktop
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/applications/thymiownetconfig.desktop
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/asebachallenge.png
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/asebahelp.png
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/asebaplayground.png
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/asebastudio.png
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/asebastudiothymio.png
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/scratchblock.png
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/thymioupgrader.png
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/thymiovpl.png
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/thymiowebbridge.png
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/48x48/apps/thymiownetconfig.png
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/asebachallenge.svg
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/asebahelp.svg
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/asebaplayground.svg
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/asebastudio.svg
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/asebastudiothymio.svg
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/scratchblock.svg
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/thymioupgrader.svg
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/thymiovpl.svg
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/thymiowebbridge.svg
+-- Installing: /home/serveur/compilation/git/aseba/debian/tmp/usr/share/icons/hicolor/scalable/apps/thymiownetconfig.svg
+make[1] : on quitte le répertoire « /home/serveur/compilation/git/aseba/debian/build »
+cp debian/README.Debian debian/tmp/usr/share/doc/aseba/
+dpkg-shlibdeps debian/tmp/usr/bin/*
+dpkg-shlibdeps: avertissement: la dépendance pourrait être évitée si « debian/tmp/usr/bin/asebastudio debian/tmp/usr/bin/rendervplblocks » n'y étaient pas lié avec libQt5X11Extras.so.5 sans nécessité (ils n'utilisent aucun des symboles de la bibliothèque).
+dpkg-shlibdeps: avertissement: la dépendance pourrait être évitée si « debian/tmp/usr/bin/asebastudio debian/tmp/usr/bin/thymioupgrader » n'y étaient pas lié avec libQt5Concurrent.so.5 sans nécessité (ils n'utilisent aucun des symboles de la bibliothèque).
+dpkg-shlibdeps: avertissement: la dépendance pourrait être évitée si « debian/tmp/usr/bin/asebaplayground debian/tmp/usr/bin/asebachallenge » n'y étaient pas lié avec libGLU.so.1 sans nécessité (ils n'utilisent aucun des symboles de la bibliothèque).
+dpkg-shlibdeps: avertissement: la dépendance pourrait être évitée si « debian/tmp/usr/bin/asebaplayground debian/tmp/usr/bin/asebastudio debian/tmp/usr/bin/asebahttp debian/tmp/usr/bin/asebaswitch debian/tmp/usr/bin/rendervplblocks » n'y étaient pas lié avec libavahi-common.so.3 sans nécessité (ils n'utilisent aucun des symboles de la bibliothèque).
+dpkg-shlibdeps: avertissement: la dépendance pourrait être évitée si « debian/tmp/usr/bin/asebaplayground debian/tmp/usr/bin/asebastudio debian/tmp/usr/bin/asebahttp debian/tmp/usr/bin/asebaswitch debian/tmp/usr/bin/rendervplblocks » n'y étaient pas lié avec libavahi-client.so.3 sans nécessité (ils n'utilisent aucun des symboles de la bibliothèque).
+chown -R root.root debian/tmp
+chmod -R o-s,go=u,go-ws debian/tmp
+dpkg-gencontrol
+dpkg --build debian/tmp ..
+dpkg-deb: building package 'aseba' in '../aseba_1.6.9_amd64.deb'.
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../aseba_1.6.9_amd64.changes
+dpkg-genchanges: info: envoi des binaires seulement (le code source n'est pas inclus)
+ dpkg-source -i --after-build aseba
+dpkg-buildpackage: info: envoi d'un binaire seulement (aucune inclusion de code source)
+Now running lintian...
+E: aseba: unstripped-binary-or-object usr/bin/asebachallenge
+E: aseba: unstripped-binary-or-object usr/bin/asebacmd
+E: aseba: unstripped-binary-or-object usr/bin/asebadummynode
+E: aseba: unstripped-binary-or-object usr/bin/asebadump
+E: aseba: unstripped-binary-or-object usr/bin/asebaeventlogger
+E: aseba: unstripped-binary-or-object usr/bin/asebaexec
+E: aseba: unstripped-binary-or-object usr/bin/asebahttp
+E: aseba: unstripped-binary-or-object usr/bin/asebahttp2
+E: aseba: unstripped-binary-or-object usr/bin/asebajoy
+E: aseba: unstripped-binary-or-object usr/bin/asebamassloader
+E: aseba: unstripped-binary-or-object usr/bin/asebamedulla
+E: aseba: unstripped-binary-or-object usr/bin/asebaplay
+E: aseba: unstripped-binary-or-object usr/bin/asebaplayground
+E: aseba: unstripped-binary-or-object usr/bin/asebarec
+E: aseba: unstripped-binary-or-object usr/bin/asebastudio
+E: aseba: unstripped-binary-or-object usr/bin/asebaswitch
+E: aseba: unstripped-binary-or-object usr/bin/rendervplblocks
+E: aseba: unstripped-binary-or-object usr/bin/thymioupgrader
+E: aseba: unstripped-binary-or-object usr/bin/thymiownetconfig
+E: aseba: unstripped-binary-or-object usr/bin/thymiownetconfig-cli
+E: aseba: unstripped-binary-or-object usr/lib/python2.7/site-packages/pyenki.so
+E: aseba: changelog-file-not-compressed changelog
+W: aseba: syntax-error-in-debian-changelog line 90 "badly formatted heading line"
+W: aseba: syntax-error-in-debian-changelog line 90 "found eof where expected more change data or trailer"
+E: aseba: copyright-should-refer-to-common-license-file-for-lgpl
+E: aseba: description-starts-with-package-name
+W: aseba: extended-description-line-too-long
+W: aseba: extended-description-line-too-long
+W: aseba: python-module-in-wrong-location usr/lib/python2.7/site-packages/pyenki.so usr/lib/python2.7/dist-packages/pyenki.so
+W: aseba: binary-without-manpage usr/bin/asebachallenge
+W: aseba: binary-without-manpage usr/bin/asebacmd
+W: aseba: binary-without-manpage usr/bin/asebadummynode
+W: aseba: binary-without-manpage usr/bin/asebadump
+W: aseba: binary-without-manpage usr/bin/asebaeventlogger
+W: aseba: binary-without-manpage usr/bin/asebaexec
+W: aseba: binary-without-manpage usr/bin/asebahttp
+W: aseba: binary-without-manpage usr/bin/asebahttp2
+W: aseba: binary-without-manpage usr/bin/asebajoy
+W: aseba: binary-without-manpage usr/bin/asebamassloader
+W: aseba: binary-without-manpage usr/bin/asebamedulla
+W: aseba: binary-without-manpage usr/bin/asebaplay
+W: aseba: binary-without-manpage usr/bin/asebaplayground
+W: aseba: binary-without-manpage usr/bin/asebarec
+W: aseba: binary-without-manpage usr/bin/asebastudio
+W: aseba: binary-without-manpage usr/bin/asebaswitch
+W: aseba: binary-without-manpage usr/bin/rendervplblocks
+W: aseba: binary-without-manpage usr/bin/thymioupgrader
+W: aseba: binary-without-manpage usr/bin/thymiownetconfig
+W: aseba: binary-without-manpage usr/bin/thymiownetconfig-cli
+W: aseba: desktop-command-not-in-package usr/share/applications/asebaonlinehelp.desktop xdg-open
+W: aseba: desktop-command-not-in-package usr/share/applications/thymiovpl.desktop thymiovpl
+Finished running lintian.
+
+WARNING generated by debuild:
+Making debian/rules executable!
+

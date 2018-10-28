@@ -1,0 +1,30 @@
+ dpkg-buildpackage -rfakeroot -us -uc -i -b
+dpkg-buildpackage: info: paquet source aseba
+dpkg-buildpackage: info: version source 1.6.0
+dpkg-buildpackage: info: distribution source xenial
+dpkg-buildpackage: info: source changé par Stéphane Magnenat <stephane@nospam.magnenat.net>
+ dpkg-source -i --before-build aseba
+dpkg-buildpackage: info: architecture hôte amd64
+ fakeroot debian/rules clean
+rm -rf debian/files debian/substvars debian/tmp debian/build
+ debian/rules build
+make: « build » est à jour.
+ fakeroot debian/rules binary
+install -d debian/tmp/DEBIAN
+install -d debian/tmp/usr/bin
+install -d debian/tmp/usr/share/doc/aseba
+install -d debian/tmp/usr/share/doc/aseba/example-code
+install -d debian/tmp/usr/share/doc/aseba/example-scenarios
+cp changelog.md debian/tmp/usr/share/doc/aseba/changelog
+cp debian/changelog debian/tmp/usr/share/doc/aseba/changelog.debian
+cp debian/copyright debian/tmp/usr/share/doc/aseba
+cp aseba/targets/playground/examples/*.png debian/tmp/usr/share/doc/aseba/example-scenarios
+cp aseba/targets/playground/examples/*.playground debian/tmp/usr/share/doc/aseba/example-scenarios
+cp aseba/targets/playground/examples/thymio-default-behaviours.aesl debian/tmp/usr/share/doc/aseba/example-scenarios
+cp aseba/targets/playground/examples/*.aesl debian/tmp/usr/share/doc/aseba/example-code
+cp aseba/targets/challenge/examples/challenge-goto-energy.aesl debian/tmp/usr/share/doc/aseba/example-code
+strip --strip-unneeded -R .note -R .comment  debian/build/*/*.a
+strip: « debian/build/*/*.a »: pas de tel fichier
+debian/rules:19 : la recette pour la cible « binary-arch » a échouée
+make: *** [binary-arch] Erreur 1
+dpkg-buildpackage: erreur: fakeroot debian/rules binary a produit une erreur de sortie de type 2
