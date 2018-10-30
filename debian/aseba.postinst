@@ -1,0 +1,5 @@
+adduser 01-mini dialout
+adduser 02-super dialout
+adduser 03-maxi dialout
+
+chmod -R 755 /usr/lib/blockly4thymio
